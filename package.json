@@ -1,0 +1,21 @@
+{
+  "name": "sdg-code-test",
+  "version": "0.1.0",
+  "description": "SDG code test with sass",
+  "main": "index.js",
+  "scripts": {
+    "build": "node-sass src/ -o build/ && babel src -d build",
+    "start": "npm run build && webpack-dev-server"
+  },
+  "author": "Rachel Sine",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  },
+  "dependencies": {
+    "node-sass": "^4.14.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

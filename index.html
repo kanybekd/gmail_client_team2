@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="build/style.css" rel="stylesheet" type="text/css" />
+    <title>GMAIL CLONE</title>
+  </head>
+  <body>
+    <header>
+      <div class="left">
+        <div><img class="header-icon" src="images/burger-menu.png" /></div>
+        <div><img class="header-icon lg" src="images/gmail-icon.png" /></div>
+        <div><p>Gmail</p></div>
+      </div>
+
+      <div class="middle">
+        <input id="search" type="text" placeholder="Search mail" />
+      </div>
+
+      <div class="right">
+        <img class="header-icon" src="images/question-icon.png" />
+        <img class="header-icon" src="images/settings-icon.png" />
+        <img class="header-icon" src="images/apps-icon.png" />
+        <img class="header-icon lg" src="images/user-icon.png" />
+      </div>
+    </header>
+    <aside class="sidebar">
+      <div class="compose"><img src="./images/plus-icon.png" />Compose</div>
+
+      <div class="menu">
+        <div class="inbox left-tag">
+          <img src="./images/inbox-icon.png" />
+          <span>Inbox</span>
+        </div>
+        <div class="starred left-tag">
+          <img src="./images/star-icon.png" />
+          <span>Starred</span>
+        </div>
+        <div class="trash left-tag">
+          <img src="./images/trash-icon.png" />
+          <span>Trash</span>
+        </div>
+        <div class="spam left-tag">
+          <img src="images/spam-icon.png" />
+          <span>Spam</span>
+        </div>
+      </div>
+
+      <div class="meet">
+        <p>Meet</p>
+        <div class="left-tag">
+          <img src="./images/video-icon.png" />
+          <span>Start a meeting</span>
+        </div>
+        <div class="left-tag">
+          <img src="./images/meeting-icon.png" />
+          <span>Join a meeting</span>
+        </div>
+      </div>
+
+      <div class="hangouts">
+        <p>Hangouts</p>
+        <div class="hangout-user">
+          <div>
+            <img src="./images/user-icon.png" />
+            <span>Peter</span>
+          </div>
+          <div>
+            <img src="./images/plus-icon.png" />
+          </div>
+        </div>
+        <hr style="width: 90%" />
+        <div class="hangout-user users">
+          <div style="flex: 1">
+            <img src="./images/user-icon.png" />
+          </div>
+          <div style="flex: 4">
+            <p style="margin: 0">Peter</p>
+            <p style="margin: 0">Invitation sent</p>
+          </div>
+        </div>
+        <div class="hangout-user users">
+          <div style="flex: 1">
+            <img src="./images/user-icon.png" />
+          </div>
+          <div style="flex: 4">
+            <p style="margin: 0">Nancy</p>
+            <p style="margin: 0">Thank you!</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+    <main>
+      <section>
+        <div>checkbox</div>
+        <div>pagination</div>
+      </section>
+      <section>
+        <div>Primary</div>
+        <div>Social</div>
+        <div>Promotions</div>
+        <div>Updates</div>
+      </section>
+      <section>
+        <div>Messages...</div>
+      </section>
+    </main>
+  </body>
+  <script type="text/javascript" src="../build/index.js"></script>
+</html>

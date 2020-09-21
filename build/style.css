@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .header-icon {
+  max-width: 20px;
+  max-height: 20px;
+}
+header .header-icon .lg {
+  max-width: 30px;
+  max-height: 30px;
+}
+header .left {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* flex: 1; */
+  width: 220px;
+  /* border: 1px solid; */
+  padding-left: 10px;
+}
+header .left img {
+  margin: auto 10px;
+}
+header .left p {
+  font-size: 24px;
+  color: gray;
+}
+header .right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex: 1;
+}
+header .right img {
+  margin: 0 10px;
+}
+header .middle {
+  flex: 5;
+}
+header .middle input {
+  background: url('../images/search-icon.png') no-repeat;
+  background-size: 18px;
+  background-position: left center;
+  background-position-x: 10px;
+  background-color: rgba(242, 245, 245, 0.8);
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 40px;
+  padding-right: 20px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  min-width: 240px;
+  max-width: 600px;
+  width: 90%;
+}
+header .middle input:focus {
+  border: none;
+  background-color: transparent;
+  box-shadow: 0 1px 1px 2px lightgray;
+}
+
+/* sidebar */
+.sidebar {
+  width: 220px;
+  /* border: 1px solid; */
+  padding: 10px;
+}
+.sidebar .compose {
+  box-shadow: 0 0 1px 1px lightgray;
+  width: 120px;
+  align-items: center;
+  justify-content: space-evenly;
+  display: flex;
+  border-radius: 50px;
+  padding: 10px;
+  user-select: none;
+  margin-bottom: 15px;
+  transition: linear 0.2s;
+}
+.sidebar .compose:hover {
+  box-shadow: 1px 3px 5px 2px lightgray;
+}
+.sidebar .compose img {
+  width: 30px;
+  height: 30px;
+}
+.sidebar .menu {
+  /* border: 1px solid; */
+  min-height: 400px;
+  overflow-y: auto;
+}
+.sidebar .menu .left-tag {
+  padding: 5px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.sidebar .menu .left-tag img {
+  height: 20px;
+  width: 20px;
+  margin-right: 15px;
+}
+
+/* meet */
+.meet {
+  border-top: 2px groove lightgray;
+  border-bottom: 1px solid lightgray;
+}
+.meet p {
+  padding-left: 15px;
+}
+.meet .left-tag {
+  padding: 5px;
+  padding-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.meet .left-tag img {
+  height: 20px;
+  width: 20px;
+  margin-right: 15px;
+}
+
+/* hangouts */
+.hangouts {
+  /* border: 1px solid; */
+}
+.hangouts .hangout-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.hangouts .hangout-user div:first-child {
+  display: flex;
+  align-items: center;
+}
+.hangouts img {
+  height: 24px;
+  width: auto;
+  margin-right: 5px;
+}
