@@ -1,7 +1,7 @@
 {
-  "name": "sdg-code-test",
+  "name": "gmail-client",
   "version": "0.1.0",
-  "description": "SDG code test with sass",
+  "description": "gmail clone client",
   "main": "index.js",
   "scripts": {
     "build": "node-sass src/ -o build/ && babel src -d build",
