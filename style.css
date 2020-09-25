@@ -37,7 +37,7 @@ main {
 }
 .mail-body {
   height: 40px;
-  border: 1px solid red;
+  border: 1px solid #EEEFF2;
 }
 
 .mail-container {
@@ -48,3 +48,25 @@ main {
   width: 50px;
   border: 1px solid aqua;
 }
+ /* Ulanbek - type-bar */
+#type-bar ul {
+  display: flex;
+  padding: 0px;
+  margin: 0;
+  
+}
+ #type-bar ul li {
+
+  height: 40px;
+  list-style: none;
+  color: #72767B;
+  padding: 10px;
+  width: 200px;
+}
+#type-bar ul li i{
+  padding: 0 10px;
+}
+#type-bar ul li:hover{
+  background-color: #EEEFF2;
+}
+ /*  */
