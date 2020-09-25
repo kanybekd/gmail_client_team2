@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+#header {
+  border: 1px solid;
+  height: 50px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: calc(100vh - 52px);
+}
+
+#aside-left {
+  width: 250px;
+  border: 1px solid green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.aside-bar {
+  flex-grow: 1;
+  border: 1px solid pink;
+}
+
+main {
+  border: 1px solid blue;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.mail-body {
+  height: 40px;
+  border: 1px solid #EEEFF2;
+}
+
+.mail-container {
+  flex-grow: 1;
+}
+
+#aside-right {
+  width: 50px;
+  border: 1px solid aqua;
+}
+ /* Ulanbek - type-bar */
+#type-bar ul {
+  display: flex;
+  padding: 0px;
+  margin: 0;
+  
+}
+ #type-bar ul li {
+
+  height: 40px;
+  list-style: none;
+  color: #72767B;
+  padding: 10px;
+  width: 200px;
+}
+#type-bar ul li i{
+  padding: 0 10px;
+}
+#type-bar ul li:hover{
+  background-color: #EEEFF2;
+}
+ /*  */
