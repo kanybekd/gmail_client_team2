@@ -91,7 +91,13 @@ header .middle input:focus {
     padding: 10px;
     user-select: none;
     margin-bottom: 15px;
-    transition: linear 0.2s; }
+    transition: linear 0.2s;
+    background-repeat: no-repeat;
+    background-position: left;
+    background-size: 32px;
+    background-image: url(https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png);
+
+  }
     .sidebar .compose:hover {
       box-shadow: 1px 3px 5px 2px lightgray; }
     .sidebar .compose img {
@@ -102,15 +108,22 @@ header .middle input:focus {
     min-height: 400px;
     overflow-y: auto; }
     .sidebar .menu .left-tag {
-      padding: 5px;
+      padding: 10px;
       padding-left: 15px;
       display: flex;
       align-items: center;
       justify-content: flex-start; }
-      .sidebar .menu .left-tag img {
+    
+    .sidebar .menu .left-tag img {
         height: 20px;
         width: 20px;
         margin-right: 15px; }
+
+    .sidebar .menu .left-tag:hover {
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 10px;
+      background-color: rgb(236, 233, 233);}
 
 /* meet */
 .meet {
@@ -196,7 +209,8 @@ main {
 #primaryBtn:hover,
 #socialBtn:hover,
 #promoBtn:hover {
-  background-color: #f1eeee;
+  /* background-color: #f8f0f0; */
+  background-color:  rgba(221, 219, 219, 0.678);
 }
 #primaryBtn:hover {
   color: red;
