@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="https://kit.fontawesome.com/20da84b6f7.js" crossorigin="anonymous"></script>
     <title>Gmail</title>
   </head>
   <body>
@@ -18,7 +19,13 @@
       <main>
         <div class="mail-body" id="checkbox-bar">Checkbox bar</div>
         <div class="mail-container">
-          <div class="mail-body" id="type-bar">Type bar</div>
+          <div class="mail-body" id="type-bar">
+              <ul>
+                <li id="primary"><i class="fas fa-inbox"></i>Primary</li>
+                <li id="social"><i class="fas fa-user-friends"></i>Social</li>
+                <li id="promotions"><i class="fas fa-tag"></i>Promotions</li>
+              </ul>
+          </div>
           <div id="main-mail">mail body</div>
         </div>
       </main>
