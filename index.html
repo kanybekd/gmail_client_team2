@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="build/style.css" rel="stylesheet" type="text/css" />
+<<<<<<< HEAD
     <link href="build/menuadd.css" rel="stylesheet" type="text/css" />
+=======
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+>>>>>>> agaparkg
     <title>GMAIL CLONE</title>
   </head>
   <body>
@@ -114,7 +118,7 @@
         </div>
       </div>
     </aside>
-    <main>
+    <!-- <main>
       <section>
         <div>checkbox</div>
         <div>pagination</div>
@@ -128,6 +132,46 @@
       <section>
         <div>Messages...</div>
       </section>
+    </main> -->
+    <main>
+      <section class="main-top">
+        <div>checkbox <i id="trash-email" class="fa fa-trash" aria-hidden="true"></i></div>
+        <div>pagination</div>
+      </section>
+
+      <!-- 
+        <section class="main-middle">
+        <div>Primary</div>
+        <div>Social</div>
+        <div>Promotions</div>
+        <div>Updates</div>
+      </section>
+
+      <section class="main-bottom">
+        <div>Messages...</div>
+      </section>
+      -->
+
+      <div class="email-body">
+        <nav>
+            <ul id="navUlEl">
+                <li class="navlist active-bot-red" id="primaryBtn"><i class="fa fa-inbox" aria-hidden="true"></i> Primary</li>
+                <li class="navlist" id="socialBtn"><i class="fa fa-users" aria-hidden="true"></i> Social</li>
+                <li class="navlist" id="promoBtn"><i class="fa fa-tag" aria-hidden="true"></i> Promotions</li>
+            </ul>
+        </nav>
+        <section>
+            <ul id="mainUlEl">
+                <!-- <li>
+                    <input class='common' type="checkbox">
+                    <i class="common fa fa-star"></i>
+                    <div class='common'>sender@gmail.com</div>
+                    <div class='common'>Hello, you're invited annual Hello, you're invited to our annual Hello, you're invited</div>
+                    <div class='common'> receive time</div>
+                </li> -->
+            </ul>
+        </section>
+      </div>
     </main>
   </body>
   <script type="text/javascript" src="../build/index.js"></script>
