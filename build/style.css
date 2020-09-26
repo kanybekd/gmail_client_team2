@@ -26,7 +26,7 @@ header .left {
   justify-content: flex-start;
   align-items: center;
   /* flex: 1; */
-  width: 220px;
+  width: 230px;
   /* border: 1px solid; */
   padding-left: 10px;
 }
@@ -74,7 +74,7 @@ header .middle input:focus {
 
 /* sidebar */
 .sidebar {
-  width: 220px;
+  width: 230px;
   /* border: 1px solid; */
   padding: 10px;
 }
@@ -153,4 +153,128 @@ header .middle input:focus {
   height: 24px;
   width: auto;
   margin-right: 5px;
+}
+
+main {
+  flex-grow: 1;
+  /* border: 1px solid red; */
+}
+
+.main-top {
+  display: flex;
+  justify-content: space-between;
+  /* border: 1px solid tomato; */
+  border-bottom: 1px solid lightgray;
+  padding: 10px;
+}
+
+.email-body {
+  overflow-y: scroll;
+  height: calc(100vh - 116px);
+}
+
+#navUlEl {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-width: 500px;
+  display: flex;
+  justify-content: flex-start;
+  border-bottom: 1px solid rgb(245, 242, 242);
+  border-top: 1px solid rgb(245, 242, 242);
+}
+
+.navlist {
+  padding: 20px 0 20px 15px;
+  width: 220px;
+  /* text-align: center; */
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  border-right: 1px solid rgb(245, 242, 242);
+  cursor: pointer;
+}
+
+.navlist .fa {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+#primaryBtn:hover,
+#socialBtn:hover,
+#promoBtn:hover {
+  background-color: #f1eeee;
+}
+#primaryBtn:hover {
+  color: red;
+}
+
+.active-bot-red {
+  border-bottom: 2px solid red;
+  /* width: 90%; */
+}
+
+#socialBtn:hover {
+  color: blue;
+}
+#promoBtn:hover {
+  color: green;
+}
+
+main {
+  background-color: #F5F7F7;
+}
+
+#mainUlEl {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+#mainUlEl li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  position: relative;
+}
+
+#mainUlEl li:hover {
+  border: 1px solid lightgray;
+  box-shadow: 0 2px 2px lightgray;
+  cursor: pointer;
+}
+
+.common {
+  padding: 0;
+  margin: 0 5px;
+  overflow: hidden;
+}
+.senderETD {
+  flex-grow: 1;
+}
+
+.senderED {
+  width: 180px;
+}
+
+.diceMouseOver {
+  position: absolute;
+  display: block;
+  left: 0;
+}
+
+.aside-right {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.aside-right i {
+  margin: 20px 0;
 }
