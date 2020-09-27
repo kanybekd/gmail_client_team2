@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="build/style.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/20da84b6f7.js" crossorigin="anonymous"></script>
     <title>GMAIL CLONE</title>
   </head>
   <body>
@@ -25,6 +26,7 @@
         <img class="header-icon lg" src="images/user-icon.png" />
       </div>
     </header>
+    <div class="flex-wrapper">
     <aside class="sidebar">
       <div class="compose"><img src="./images/plus-icon.png" />Compose</div>
 
@@ -97,15 +99,19 @@
         <div>pagination</div>
       </section>
       <section>
-        <div>Primary</div>
-        <div>Social</div>
-        <div>Promotions</div>
-        <div>Updates</div>
+        <div class="mail-body" id="type-bar">
+          <ul>
+            <li id="primary"><i class="fas fa-inbox"></i>Primary</li>
+            <li id="social"><i class="fas fa-user-friends"></i>Social</li>
+            <li id="promotions"><i class="fas fa-tag"></i>Promotions</li>
+          </ul>
+        </div>
       </section>
       <section>
         <div>Messages...</div>
       </section>
     </main>
+  </div>
   </body>
   <script type="text/javascript" src="../build/index.js"></script>
 </html>
