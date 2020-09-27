@@ -26,11 +26,14 @@
         <img class="header-icon lg" src="images/user-icon.png" />
       </div>
     </header>
-    <div class="wrapper">
+
+    <div class="flex-wrapper">
       <aside class="sidebar">
-        <!-- <img src="./images/plus-icon.png" /> -->
-        <div class="compose">Compose</div>
-      
+        <!-- KARLYGACH'S PART START HERE -->
+        <div class="compose">
+          <img src="./images/gm-plus-icon.png" alt="gmail compose plus icon"><span>Compose</span>
+        </div>
+
         <div class="menu">
           <div class="inbox left-tag">
             <img src="./images/inbox-icon.png" />
@@ -48,29 +51,10 @@
             <img src="images/spam-icon.png" />
             <span>Spam</span>
           </div>
-          <div class="sent left-tag">
-            <img src="./images/sent.png" />
-            <span>Sent</span>
-          </div>
-          <div class="draft left-tag">
-            <img src="./images/drafts.png" />
-            <span>Drafts</span>
-          </div>
-          <div class="important left-tag">
-            <img src="./images/inbox-icon.png" />
-            <span>Important</span>
-          </div>
-          <div class="social left-tag">
-            <img src="./images/users.png" />
-            <span>Social</span>
-          </div>
-          
         </div>
-      
-      
-        <!-- KARLYGACH'S ENDING -->
-      
-      
+        <!-- KARLYGACH'S PART ENDS HERE -->
+
+        <!-- KUMAR'S PART STARTS HERE -->
         <div class="meet">
           <p>Meet</p>
           <div class="left-tag">
@@ -114,62 +98,51 @@
             </div>
           </div>
         </div>
+        <!-- KUMAR'S PART ENDS HERE -->
       </aside>
-      <!-- <main>
-        <section>
-          <div>checkbox</div>
-          <div>pagination</div>
-        </section>
-        <section>
-          <div>Primary</div>
-          <div>Social</div>
-          <div>Promotions</div>
-          <div>Updates</div>
-        </section>
-        <section>
-          <div>Messages...</div>
-        </section>
-      </main> -->
+      
       <main>
+        <!-- KANYBEK'S PART STARTS HERE -->
         <section class="main-top">
           <div>checkbox <i id="trash-email" class="fa fa-trash" aria-hidden="true"></i></div>
           <div>pagination</div>
         </section>
-      
-        <!-- 
-          <section class="main-middle">
-          <div>Primary</div>
-          <div>Social</div>
-          <div>Promotions</div>
-          <div>Updates</div>
-        </section>
-      
-        <section class="main-bottom">
-          <div>Messages...</div>
-        </section>
-        -->
-      
-        <div class="email-body">
+        <!-- KANYBEK'S PART ENDS HERE -->
+
+        <!-- ULANBEK'S PART STARTS HERE -->
+        <section class="email-body" id="type-bar">
           <nav>
-              <ul id="navUlEl">
-                  <li class="navlist active-bot-red" id="primaryBtn"><i class="fa fa-inbox" aria-hidden="true"></i> Primary</li>
-                  <li class="navlist" id="socialBtn"><i class="fa fa-users" aria-hidden="true"></i> Social</li>
-                  <li class="navlist" id="promoBtn"><i class="fa fa-tag" aria-hidden="true"></i> Promotions</li>
-              </ul>
+            <ul>
+              <li id="primary"><i class="fas fa-inbox"></i>Primary</li>
+              <li id="social"><i class="fas fa-user-friends"></i>Social</li>
+              <li id="promotions"><i class="fas fa-tag"></i>Promotions</li>
+            </ul>
           </nav>
-          <section>
-              <ul id="mainUlEl">
-                  <!-- <li>
-                      <input class='common' type="checkbox">
-                      <i class="common fa fa-star"></i>
-                      <div class='common'>sender@gmail.com</div>
-                      <div class='common'>Hello, you're invited annual Hello, you're invited to our annual Hello, you're invited</div>
-                      <div class='common'> receive time</div>
-                  </li> -->
-              </ul>
-          </section>
-        </div>
+        </section>
+        <!-- ULANBEK'S PART ENDS HERE -->
+
+        <!-- AZAMAT'S PART STARTS HERE -->
+        <section>
+          <ul id="mainUlEl">
+            <!-- <li>
+                <input class='common' type="checkbox">
+                <i class="common fa fa-star"></i>
+                <div class='common'>sender@gmail.com</div>
+                <div class='common'>Hello, you're invited annual Hello, you're invited to our annual Hello, you're invited</div>
+                <div class='common'> receive time</div>
+            </li> -->
+          </ul>
+        </section>
+        <!-- AZAMAT'S PART ENDS HERE -->
       </main>
+      <!-- RUSTAM'S PART STARTS HERE -->
+      <aside class="aside-right">
+        <i class="fa fa-inbox" aria-hidden="true"></i>
+        <i class="fa fa-inbox" aria-hidden="true"></i>
+        <i class="fa fa-inbox" aria-hidden="true"></i>
+        <i class="fa fa-inbox" aria-hidden="true"></i>
+      </aside>
+      <!-- RUSTAM'S PART STARTS HERE -->
     </div>
   </body>
   <script type="text/javascript" src="../build/gmail.js"></script>
