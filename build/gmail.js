@@ -102,6 +102,15 @@ function displayData(fetch_output){
             console.log(Object.keys(primaryEmails).length)
         }
 
+        // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
+        if(id === 'compose-plus-icon' || id === 'compose-text'){
+            document.querySelector('.email-compose-screen').style.display = 'block'
+        }
+
+        if(id === 'close-new-message-screen'){
+            document.querySelector('.email-compose-screen').style.display = 'none'
+        }
+
     })
     
     function createElements(dataSet){

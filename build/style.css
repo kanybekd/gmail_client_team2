@@ -158,16 +158,23 @@ header {
   font-size: 14px;
   cursor: pointer;
   padding-left: 0;
+  position: relative;
 }
+  .meet .fa {
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    /* border: 1px solid red; */
+  }
   .meet p {
     padding: 5px 25px;
     margin-right: 25px;
   }
-    .meet p:hover {
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
-      background-color: rgb(236, 233, 233);
-    }
+
+  .meet .left-tag-join {
+    margin-bottom: 8px;
+  }
+
   .meet .left-tag {
     padding: 6px 10px;
     color: #72767B;
@@ -203,11 +210,6 @@ header {
     padding: 6px 25px;
     margin-right: 25px;
   }
-    .hangouts p:hover {
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
-      background-color: rgb(236, 233, 233);
-    }
 
   .hangouts .hangout-user {
     display: flex;
@@ -223,11 +225,11 @@ header {
     position: relative;
   }
   
-    .hangouts .hangout-user:hover {
+    /* .hangouts .hangout-user:hover {
       border-top-right-radius: 30px;
       border-bottom-right-radius: 30px;
       background-color: rgb(236, 233, 233);
-    }
+    } */
   .hangouts .hangout-user img {
     height: 20px;
     width: 20px;
@@ -262,15 +264,21 @@ main {
   height: calc(100vh - 116px);
 }
 
+#type-bar {
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+
 #type-bar #nav-ul-el {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  min-width: 500px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   border-bottom: 1px solid rgb(238, 236, 236);
+
 }
  #type-bar #nav-ul-el .nav-list {
   list-style-type: none;
@@ -280,9 +288,10 @@ main {
   padding: 20px;
   width: 220px;
   cursor: pointer;
+  /* border: none; */
 }
 #type-bar #nav-ul-el .nav-list i {
-  margin-right:10px;
+  margin-right: 10px;
 }
 #type-bar #nav-ul-el .nav-list:hover{
   background-color: #EEEFF2;
@@ -348,3 +357,27 @@ main {
   margin: 20px 0;
 }
 
+.email-compose-screen {
+  position: absolute;
+  bottom: 0;
+  right: 70px;
+  width: 500px;
+  background-color: rgb(235, 231, 231);
+  height: 400px;
+  display: none;
+}
+
+.email-compose-screen .new-message {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: black;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+}
+
+.email-compose-screen .new-message-details {
+  padding: 10px 20px;
+}

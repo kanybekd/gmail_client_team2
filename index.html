@@ -32,7 +32,7 @@
       <aside class="sidebar">
         <!-- KARLYGACH'S PART START HERE -->
         <div class="compose">
-          <img src="./images/gm-plus-icon.png" alt="gmail compose plus icon"><span>Compose</span>
+          <img id="compose-plus-icon" src="./images/gm-plus-icon.png" alt="gmail compose plus icon"><span id="compose-text">Compose</span>
         </div>
 
         <div class="menu">
@@ -56,17 +56,23 @@
             <span>Spam</span>
             <span id="spam-counter" style="color: red;"></span>
           </div>
+          <div class="draft left-tag">
+            <img id="sidebar-draft-icon" src="./images/drafts.png" />
+            <span>Drafts</span>
+            <span id="draft-counter" style="color: red;"></span>
+          </div>
         </div>
         <!-- KARLYGACH'S PART ENDS HERE -->
 
         <!-- KUMAR'S PART STARTS HERE -->
         <div class="meet">
+          <i class="fa fa-ellipsis-h" style="font-size:24px;"></i>
           <p>Meet</p>
-          <div class="left-tag">
-            <img src="./images/video-icon.png" />
-            <span>Start a meeting</span>
+          <div class="left-tag left-tag-start">
+            <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/video-icon.png" />
+            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Start a meeting</span>
           </div>
-          <div class="left-tag">
+          <div class="left-tag left-tag-join">
             <img src="./images/meeting-icon.png" />
             <span>Join a meeting</span>
           </div>
@@ -83,25 +89,7 @@
           <div class="hangout-user users">
             <img src="./images/user-icon.png" />
             <span>Nancy</span>
-            <p class="hangouts-plus">Thank you!</p>
-              <!-- <div class="hangout-user users">
-                <div style="flex: 1">
-                  <img src="./images/user-icon.png" />
-                </div>
-                <div style="flex: 4">
-                  <p style="margin: 0">Peter</p>
-                  <p style="margin: 0">Invitation sent</p>
-                </div>
-              </div>
-              <div class="hangout-user users">
-                <div style="flex: 1">
-                  <img src="./images/user-icon.png" />
-                </div>
-                <div style="flex: 4">
-                  <p style="margin: 0">Nancy</p>
-                  <p style="margin: 0">Thank you!</p>
-                </div>
-              </div> -->
+            <img class="hangouts-plus" src="./images/plus-icon.png" />
           </div>
         </div>
         <!-- KUMAR'S PART ENDS HERE -->
@@ -148,7 +136,24 @@
         <i class="fa fa-inbox" aria-hidden="true"></i>
         <i class="fa fa-inbox" aria-hidden="true"></i>
       </aside>
-      <!-- RUSTAM'S PART STARTS HERE -->
+      <!-- RUSTAM'S PART ENDS HERE -->
+
+
+      <!-- THIS SECTION WILL DISPLAY A COMPOSE AN EMAIL SCREEN  -->
+      <div class="email-compose-screen">
+        <div class="new-message">
+          <div>New message</div>
+          <div>some icons <i id="close-new-message-screen" class="fa fa-window-close"></i></div>
+        </div>
+        <div class="new-message-details">
+          <div>sending to who</div>
+          <div>email subject</div>
+          <div>email body</div>
+          <div>more icons</div>
+          <div>Send button and other icons</div>
+        </div>
+      </div>
+
     </div>
   </body>
   <script type="text/javascript" src="../build/gmail.js"></script>
