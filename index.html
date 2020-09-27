@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="build/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/20da84b6f7.js" crossorigin="anonymous"></script>
     <title>GMAIL CLONE</title>
   </head>
   <body>
@@ -36,20 +37,24 @@
 
         <div class="menu">
           <div class="inbox left-tag">
-            <img src="./images/inbox-icon.png" />
+            <img id="sidebar-inbox-icon" src="./images/inbox-icon.png" />
             <span>Inbox</span>
+            <span id="inbox-counter" style="color: red;"></span>
           </div>
           <div class="starred left-tag">
-            <img src="./images/star-icon.png" />
+            <img id="sidebar-starred-icon" src="./images/star-icon.png" />
             <span>Starred</span>
+            <span id="starred-counter" style="color: red;"></span>
           </div>
           <div class="trash left-tag">
-            <img src="./images/trash-icon.png" />
+            <img id="sidebar-trash-icon" src="./images/trash-icon.png" />
             <span>Trash</span>
+            <span id="trash-counter" style="color: red;"></span>
           </div>
           <div class="spam left-tag">
-            <img src="images/spam-icon.png" />
+            <img id="sidebar-spam-icon" src="images/spam-icon.png" />
             <span>Spam</span>
+            <span id="spam-counter" style="color: red;"></span>
           </div>
         </div>
         <!-- KARLYGACH'S PART ENDS HERE -->
@@ -70,32 +75,33 @@
         <div class="hangouts">
           <p>Hangouts</p>
           <div class="hangout-user">
-            <div>
               <img src="./images/user-icon.png" />
               <span>Peter</span>
-            </div>
-            <div>
-              <img src="./images/plus-icon.png" />
-            </div>
+              <img class="hangouts-plus" src="./images/plus-icon.png" />
           </div>
-          <hr style="width: 90%" />
+          <hr />
           <div class="hangout-user users">
-            <div style="flex: 1">
-              <img src="./images/user-icon.png" />
-            </div>
-            <div style="flex: 4">
-              <p style="margin: 0">Peter</p>
-              <p style="margin: 0">Invitation sent</p>
-            </div>
-          </div>
-          <div class="hangout-user users">
-            <div style="flex: 1">
-              <img src="./images/user-icon.png" />
-            </div>
-            <div style="flex: 4">
-              <p style="margin: 0">Nancy</p>
-              <p style="margin: 0">Thank you!</p>
-            </div>
+            <img src="./images/user-icon.png" />
+            <span>Nancy</span>
+            <p class="hangouts-plus">Thank you!</p>
+              <!-- <div class="hangout-user users">
+                <div style="flex: 1">
+                  <img src="./images/user-icon.png" />
+                </div>
+                <div style="flex: 4">
+                  <p style="margin: 0">Peter</p>
+                  <p style="margin: 0">Invitation sent</p>
+                </div>
+              </div>
+              <div class="hangout-user users">
+                <div style="flex: 1">
+                  <img src="./images/user-icon.png" />
+                </div>
+                <div style="flex: 4">
+                  <p style="margin: 0">Nancy</p>
+                  <p style="margin: 0">Thank you!</p>
+                </div>
+              </div> -->
           </div>
         </div>
         <!-- KUMAR'S PART ENDS HERE -->
@@ -110,29 +116,29 @@
         <!-- KANYBEK'S PART ENDS HERE -->
 
         <!-- ULANBEK'S PART STARTS HERE -->
-        <section class="email-body" id="type-bar">
-          <nav>
-            <ul>
-              <li id="primary"><i class="fas fa-inbox"></i>Primary</li>
-              <li id="social"><i class="fas fa-user-friends"></i>Social</li>
-              <li id="promotions"><i class="fas fa-tag"></i>Promotions</li>
+        <div class="email-body">
+          <section id="type-bar">
+              <ul id="nav-ul-el">
+                <li class="nav-list active-bot-red" id="primary"><i class="fas fa-inbox"></i>Primary</li>
+                <li class="nav-list" id="social"><i class="fas fa-user-friends"></i>Social</li>
+                <li class="nav-list" id="promotions"><i class="fas fa-tag"></i>Promotions</li>
+              </ul>
+          </section>
+          <!-- ULANBEK'S PART ENDS HERE -->
+          
+          <!-- AZAMAT'S PART STARTS HERE -->
+          <section>
+            <ul id="main-ul-el">
+              <!-- <li class='main-ul-li-class'>
+                  <input class='common' type="checkbox">
+                  <i class="common fa fa-star"></i>
+                  <div class='common'>sender@gmail.com</div>
+                  <div class='common'>Hello, you're invited annual Hello, you're invited to our annual Hello, you're invited</div>
+                  <div class='common'> receive time</div>
+              </li> -->
             </ul>
-          </nav>
-        </section>
-        <!-- ULANBEK'S PART ENDS HERE -->
-
-        <!-- AZAMAT'S PART STARTS HERE -->
-        <section>
-          <ul id="mainUlEl">
-            <!-- <li>
-                <input class='common' type="checkbox">
-                <i class="common fa fa-star"></i>
-                <div class='common'>sender@gmail.com</div>
-                <div class='common'>Hello, you're invited annual Hello, you're invited to our annual Hello, you're invited</div>
-                <div class='common'> receive time</div>
-            </li> -->
-          </ul>
-        </section>
+          </section>
+        </div>
         <!-- AZAMAT'S PART ENDS HERE -->
       </main>
       <!-- RUSTAM'S PART STARTS HERE -->

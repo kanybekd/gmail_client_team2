@@ -22,8 +22,8 @@ function displayData(fetch_output){
 
     // console.log(primaryEmails)
 
-    const primaryBtn = document.getElementById('primaryBtn')
-    const mainUl = document.getElementById('mainUlEl')
+    const primaryBtn = document.getElementById('primary')
+    const mainUl = document.getElementById('main-ul-el')
     
     createElements(primaryEmails);
     
@@ -51,9 +51,9 @@ function displayData(fetch_output){
         // const classNames = event.target.getAttribute('class')
 
         // THIS SECTION FOR PRIMARY, SOCIAL, AND PROMOTION BUTTONS
-        if(id === 'primaryBtn' || id === 'socialBtn' || id === 'promoBtn'){
+        if(id === 'primary' || id === 'social' || id === 'promotions'){
             if(!event.target.className.includes('active-bot-red')){
-                document.querySelectorAll('.navlist').forEach(item => {
+                document.querySelectorAll('.nav-list').forEach(item => {
                     item.classList.remove('active-bot-red');
                 })
                 event.target.classList.add('active-bot-red')
@@ -63,7 +63,7 @@ function displayData(fetch_output){
 
         // THIS SECTION IS FOR CHECKING AND REMOVING EACH EMAIL
         if(id === 'trash-email'){
-            document.querySelectorAll('.mainUlLiClass input').forEach(item => {
+            document.querySelectorAll('.main-ul-li-class input').forEach(item => {
                 if(item.checked){
                     // trashObject[item.parentElement.getAttribute('data-id')] = item.parentElement;
                     // console.log(trashObject);
@@ -80,12 +80,12 @@ function displayData(fetch_output){
         // THIS SECTION IS FOR OPENING TRASH AND DISPLAYING TRASHED EMAILS
         if(id === 'sidebar-trash-icon'){
             console.log('clicked trash yay')
-            document.querySelectorAll('.mainUlLiClass').forEach(item => {
+            document.querySelectorAll('.main-ul-li-class').forEach(item => {
                 item.remove();
             })
             // console.log(document.querySelectorAll('.mainUlLiClass').length)
             createElements(trashObject)
-            document.querySelector('#navUlEl').style.display = 'none'
+            document.querySelector('#nav-ul-el').style.display = 'none'
         }
 
         // THIS SECTION IS FOR OPENING INBOX
@@ -98,7 +98,7 @@ function displayData(fetch_output){
             console.log('primary email result after pressing inbox icon =', primaryEmails)
             
             createElements(primaryEmails)
-            document.querySelector('#navUlEl').style.display = ''
+            document.querySelector('#nav-ul-el').style.display = ''
             console.log(Object.keys(primaryEmails).length)
         }
 
@@ -112,7 +112,7 @@ function displayData(fetch_output){
                 keyArray.push(Number(key));
                 // console.log(keyArray)
                 const mainUlLi = document.createElement('li')
-                mainUlLi.setAttribute('class', 'mainUlLiClass')
+                mainUlLi.setAttribute('class', 'main-ul-li-class')
                 mainUlLi.setAttribute('data-id', key)
     
                 const diceIcon = document.createElement('i')
