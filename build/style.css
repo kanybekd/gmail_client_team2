@@ -206,6 +206,21 @@ header {
   cursor: pointer;
 }
 
+  .hangouts div.users {
+    overflow-y: scroll;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .hangouts .users .users-info {
+    display: flex;
+    align-items: center;
+  }
+
   .hangouts p {
     padding: 6px 25px;
     margin-right: 25px;
@@ -224,12 +239,7 @@ header {
     margin-right: 25px;
     position: relative;
   }
-  
-    /* .hangouts .hangout-user:hover {
-      border-top-right-radius: 30px;
-      border-bottom-right-radius: 30px;
-      background-color: rgb(236, 233, 233);
-    } */
+
   .hangouts .hangout-user img {
     height: 20px;
     width: 20px;
@@ -240,6 +250,13 @@ header {
   .hangouts .hangout-user .hangouts-plus {
     position: absolute;
     right: 0;
+    height: 15px;
+    width: 15px;
+  }
+
+  .hangouts .hangout-user .users-info .hangouts-bars {
+    position: absolute;
+    right: 8px;
     height: 15px;
     width: 15px;
   }
@@ -258,6 +275,25 @@ main {
   border-bottom: 1px solid rgb(238, 236, 236);
   padding: 10px;
 }
+  .main-top-left {
+    display: flex;
+    justify-content: space-between;
+    width: 120px;
+  }
+    .main-top-left-checkbox-display {
+      display: none;
+    }
+  .main-top-right {
+    display: flex;
+    justify-content: space-between;
+    width: 230px;
+    align-items: center;
+    margin-right: 30px;
+  }
+
+    .main-top-right .pagination {
+      margin: 0;
+    }
 
 .email-body {
   overflow-y: scroll;
@@ -302,13 +338,13 @@ main {
   border-bottom: 3px solid rgb(216, 3, 3);
 }
 
-#main-ul-el {
+#email-list-ul-el {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-#main-ul-el .main-ul-li-class {
+#email-list-ul-el .main-ul-li-class {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -319,7 +355,7 @@ main {
   position: relative;
 }
 
-#main-ul-el li:hover {
+#email-list-ul-el li:hover {
   border: 1px solid lightgray;
   box-shadow: 0 2px 2px lightgray;
   cursor: pointer;

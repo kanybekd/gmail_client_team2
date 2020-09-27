@@ -73,23 +73,27 @@
             <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Start a meeting</span>
           </div>
           <div class="left-tag left-tag-join">
-            <img src="./images/meeting-icon.png" />
-            <span>Join a meeting</span>
+            <img onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');" src="./images/meeting-icon.png" />
+            <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Join a meeting</span>
           </div>
         </div>
       
         <div class="hangouts">
           <p>Hangouts</p>
           <div class="hangout-user">
-              <img src="./images/user-icon.png" />
-              <span>Peter</span>
-              <img class="hangouts-plus" src="./images/plus-icon.png" />
+            <img src="./images/user-icon.png" />
+            <span>Peter</span>
+            <img class="hangouts-plus" src="./images/plus-icon.png" />
           </div>
           <hr />
+
+          <!-- OTHER USERS FROM CONTACTS -->
           <div class="hangout-user users">
-            <img src="./images/user-icon.png" />
-            <span>Nancy</span>
-            <img class="hangouts-plus" src="./images/plus-icon.png" />
+            <div class="users-info">
+              <img src="./images/user-icon.png" />
+              <span>Nancy</span>
+              <img class="hangouts-bars" src="./images/bars-icon.png" />
+            </div>
           </div>
         </div>
         <!-- KUMAR'S PART ENDS HERE -->
@@ -98,8 +102,29 @@
       <main>
         <!-- KANYBEK'S PART STARTS HERE -->
         <section class="main-top">
-          <div>checkbox <i id="trash-email" class="fa fa-trash" aria-hidden="true"></i></div>
-          <div>pagination</div>
+          <div>
+            <div class="main-top-left">
+              <div>
+                <input type="checkbox" id="main-top-checkbox">
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
+              </div>
+              <i class="fa fa-redo" aria-hidden="true"></i>
+              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+            </div>
+            
+            <div class="main-top-left-checkbox-display">
+              <i id="trash-email" class="fa fa-trash" aria-hidden="true"></i>
+            </div>
+          </div>
+          <div class="main-top-right">
+            <p class="pagination">1-50 of 1,230</p>
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <div>
+              <i class="fa fa-keyboard" aria-hidden="true"></i>
+              <i class="fa fa-angle-down" aria-hidden="true"></i>
+            </div>
+          </div>
         </section>
         <!-- KANYBEK'S PART ENDS HERE -->
 
@@ -115,8 +140,8 @@
           <!-- ULANBEK'S PART ENDS HERE -->
           
           <!-- AZAMAT'S PART STARTS HERE -->
-          <section>
-            <ul id="main-ul-el">
+          <section id="email-list">
+            <ul id="email-list-ul-el">
               <!-- <li class='main-ul-li-class'>
                   <input class='common' type="checkbox">
                   <i class="common fa fa-star"></i>

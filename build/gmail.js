@@ -23,7 +23,7 @@ function displayData(fetch_output){
     // console.log(primaryEmails)
 
     const primaryBtn = document.getElementById('primary')
-    const mainUl = document.getElementById('main-ul-el')
+    const mainUl = document.getElementById('email-list-ul-el')
     
     createElements(primaryEmails);
     
