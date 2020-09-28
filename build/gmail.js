@@ -26,24 +26,24 @@ function displayData(fetch_output){
     const mainUl = document.getElementById('email-list-ul-el')
     
     createElements(primaryEmails);
+
+    mainUl.addEventListener('mouseover', function(e){
+        if(e.target.tagName === 'LI'){
+            document.querySelectorAll('.main-ul-li-class').forEach(element => {
+                element.firstChild.style.display = 'none';
+                element.lastChild.style.display = 'none';
+            });
+            e.target.firstChild.style.display = 'block';
+            e.target.firstChild.style.position = 'absolute';
+            e.target.firstChild.style.left = '0';
+            e.target.lastChild.style.backgroundColor = '#F4F7F7';
     
-    // mainUl.addEventListener('mouseover', function(e){
-    //     if(e.target.tagName === 'LI'){
-    //         document.querySelectorAll('.mainUlLiClass').forEach(element => {
-    //             element.firstChild.style.display = 'none'
-    //             element.lastChild.style.display = 'none'
-    //         });
-    //         e.target.firstChild.style.display = 'block'
-    //         e.target.firstChild.style.position = 'absolute'
-    //         e.target.firstChild.style.left = '0'
-    
-    //         e.target.lastChild.style.display = 'block'
-    //         e.target.lastChild.style.position = 'absolute'
-    //         e.target.lastChild.style.right = '0'
-    //         e.target.lastChild.style.opacity = '1'
-    //         e.target.lastChild.style.backgroundColor = '#F4F7F7'
-    //     }
-    // })
+            e.target.lastChild.style.display = 'block';
+            e.target.lastChild.style.position = 'absolute';
+            e.target.lastChild.style.right = '0';
+            e.target.lastChild.style.backgroundColor = '#F4F7F7';
+        }
+    })
     
 
     document.body.addEventListener('click', event => {
@@ -96,7 +96,6 @@ function displayData(fetch_output){
             // })
             // console.log(document.querySelectorAll('.mainUlLiClass').length)
             console.log('primary email result after pressing inbox icon =', primaryEmails)
-            
             createElements(primaryEmails)
             document.querySelector('#nav-ul-el').style.display = ''
             console.log(Object.keys(primaryEmails).length)
@@ -106,9 +105,43 @@ function displayData(fetch_output){
         if(id === 'compose-plus-icon' || id === 'compose-text'){
             document.querySelector('.email-compose-screen').style.display = 'block'
         }
-
         if(id === 'close-new-message-screen'){
             document.querySelector('.email-compose-screen').style.display = 'none'
+        }
+
+        // THIS SECTION IS FOR DISPLAYING OPTIONS FOR MAIN-TOP-LEFT-ARROW-DOWN ICON
+        if(id === 'main-top-left-fa-arrow-down'){
+            document.querySelector('.main-top-left-checkbox-display').classList.toggle('main-top-left-checkbox-display-on-off')
+        }
+
+        // THIS SECTION IS ...
+        if(id === 'main-top-left-refresh'){
+            // document.querySelector('.main-top-middle').classList.toggle('main-top-middle-on-off')
+            document.querySelector('.main-top-middle').style.display = 'block'
+            setTimeout(function () {
+                document.querySelector('.main-top-middle').style.display = 'none';
+            }, 1500);
+        }
+
+        // THIS SECTION IS FOR CHECKING ALL EMAILS AT ONCE IN THE CURRENT SCREEN
+        if(id === 'main-top-checkbox'){
+            if(document.querySelector('#main-top-checkbox').checked){
+                document.querySelectorAll('.main-ul-li-class input').forEach(item => {
+                    item.checked = true;
+                })
+                document.querySelector('#main-top-left').classList.remove('main-top-left-before');
+                document.querySelector('#main-top-left').classList.add('main-top-left-after');
+                document.querySelector('#main-top-left-refresh').style.display = 'none';
+                document.querySelector('.main-top-checkbox-checked-div').style.display = 'block'
+            } else {
+                document.querySelectorAll('.main-ul-li-class input').forEach(item => {
+                    item.checked = false;
+                })
+                document.querySelector('#main-top-left').classList.add('main-top-left-before');
+                document.querySelector('#main-top-left').classList.remove('main-top-left-after');
+                document.querySelector('#main-top-left-refresh').style.display = 'block';
+                document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
+            }
         }
 
     })
@@ -120,55 +153,56 @@ function displayData(fetch_output){
             if(!keyArray.includes(Number(key))){
                 keyArray.push(Number(key));
                 // console.log(keyArray)
-                const mainUlLi = document.createElement('li')
-                mainUlLi.setAttribute('class', 'main-ul-li-class')
-                mainUlLi.setAttribute('data-id', key)
+                const mainUlLi = document.createElement('li');
+                mainUlLi.setAttribute('class', 'main-ul-li-class');
+                mainUlLi.setAttribute('data-id', key);
     
-                const diceIcon = document.createElement('i')
-                diceIcon.setAttribute('id', `${key}a`)
-                diceIcon.setAttribute('class', 'common fa fa-ellipsis-v')
+                const diceIcon = document.createElement('i');
+                diceIcon.setAttribute('id', `${key}a`);
+                diceIcon.setAttribute('class', 'common first-child fa fa-ellipsis-v');
                 diceIcon.style.display = 'none';
-                mainUlLi.appendChild(diceIcon)
+                mainUlLi.appendChild(diceIcon);
                 
-                const input = document.createElement('input')
-                input.setAttribute('id', `${key}b`)
-                input.setAttribute('class', 'common')
-                input.setAttribute('type', 'checkbox')
-                input.style.marginLeft = '15px'
-                mainUlLi.appendChild(input)
+                const input = document.createElement('input');
+                input.setAttribute('id', `${key}b`);
+                input.setAttribute('class', 'common');
+                input.setAttribute('type', 'checkbox');
+                input.style.marginLeft = '15px';
+                mainUlLi.appendChild(input);
         
-                const starIcon = document.createElement('i')
-                starIcon.setAttribute('id', `${key}c`)
-                starIcon.setAttribute('class', 'common fa fa-star')
-                mainUlLi.appendChild(starIcon)
+                const starIcon = document.createElement('i');
+                starIcon.setAttribute('id', `${key}c`);
+                starIcon.setAttribute('class', 'common fa fa-star');
+                mainUlLi.appendChild(starIcon);
         
-                const senderEmailDiv = document.createElement('div')
-                senderEmailDiv.setAttribute('id', `${key}d`)
-                senderEmailDiv.setAttribute('class', 'common senderED')
-                senderEmailDiv.innerText = dataSet[key].senderEmail
-                mainUlLi.appendChild(senderEmailDiv)
+                const senderEmailDiv = document.createElement('div');
+                senderEmailDiv.setAttribute('id', `${key}d`);
+                senderEmailDiv.setAttribute('class', 'common senderED');
+                senderEmailDiv.innerText = dataSet[key].senderEmail;
+                mainUlLi.appendChild(senderEmailDiv);
         
-                const senderEmailTitleDiv = document.createElement('div')
-                senderEmailTitleDiv.setAttribute('id', `${key}e`)
-                senderEmailTitleDiv.setAttribute('class', 'common senderETD')
-                senderEmailTitleDiv.innerText = dataSet[key].messageTitle
-                mainUlLi.appendChild(senderEmailTitleDiv)
+                const senderEmailTitleDiv = document.createElement('div');
+                senderEmailTitleDiv.setAttribute('id', `${key}e`);
+                senderEmailTitleDiv.setAttribute('class', 'common senderETD');
+                senderEmailTitleDiv.innerText = dataSet[key].messageTitle;
+                mainUlLi.appendChild(senderEmailTitleDiv);
         
-                const receiveTime = document.createElement('div')
-                receiveTime.setAttribute('id', `${key}f`)
-                receiveTime.setAttribute('class', 'common')
+                const receiveTime = document.createElement('div');
+                receiveTime.setAttribute('id', `${key}f`);
+                receiveTime.setAttribute('class', 'common');
                 // receiveTime.innerText = primaryEmails[key].time.toLocaleTimeString().replace(/:\d+ /, ' ');
                 receiveTime.innerText = dataSet[key].date.slice(11, 19) + ' PM';
-                mainUlLi.appendChild(receiveTime)
+                mainUlLi.appendChild(receiveTime);
     
-                const additionalBtns = document.createElement('div')
-                additionalBtns.setAttribute('id', `${key}g`)
-                additionalBtns.setAttribute('class', 'common')
+                const additionalBtns = document.createElement('div');
+                additionalBtns.setAttribute('id', `${key}g`);
+                additionalBtns.setAttribute('class', 'common last-child');
                 additionalBtns.style.display = 'none';
-                additionalBtns.innerText = "Hello Philadelphia"
-                mainUlLi.appendChild(additionalBtns)
+                // additionalBtns.innerText = "Hello Philadelphia";
+                additionalBtns.innerHTML = '<img src="./images/archive.png" alt="" /> <img src="./images/trash-icon.png" alt=""/><img src="./images/mark_as_unread.png" alt="" /><img src="./images/snooze-icon.png" alt=""/>';
+                mainUlLi.appendChild(additionalBtns);
         
-                mainUl.appendChild(mainUlLi) 
+                mainUl.appendChild(mainUlLi);
             }
         }
     }

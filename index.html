@@ -103,18 +103,44 @@
         <!-- KANYBEK'S PART STARTS HERE -->
         <section class="main-top">
           <div>
-            <div class="main-top-left">
-              <div>
+            <div id="main-top-left" class="main-top-left-before">
+              <div class="main-top-left-checkbox-down">
                 <input type="checkbox" id="main-top-checkbox">
-                <i class="fa fa-angle-down" aria-hidden="true"></i>
+                <i id="main-top-left-fa-arrow-down" class="fa fa-angle-down" aria-hidden="true"></i>
               </div>
-              <i class="fa fa-redo" aria-hidden="true"></i>
-              <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              <i id="main-top-left-refresh" class="fa fa-redo" aria-hidden="true"></i>
+              <div class="main-top-checkbox-checked-div">
+                <div class="main-top-checkbox-checked-display">
+                  <img id="archive-email" src="./images/archive.png" alt="">
+                  <img id="spam-email" src="./images/spam-icon2.png" alt="">
+                  <img id="trash-email" src="./images/trash-icon.png" alt="">
+                  <img id="mark-as-read-email" src="./images/mark_as_unread.png" alt="">
+                  <img id="snooze-email" src="./images/snooze-icon.png" alt="">
+                  <img id="add-to-tasks-email" src="./images/add-to-tasks-icon.jpg" alt="">
+                  <img id="move-to-email" src="./images/move-to-icon.jpg" alt="">
+                  <img id="labels-email" src="./images/labels-icon.jpg" alt="">
+                </div>
+              </div>
+              <i id="main-top-left-three-dots" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+              <div class="main-top-left-displays main-top-left-checkbox-display">
+                <ul>
+                  <li>All</li>
+                  <li>None</li>
+                  <li>Read</li>
+                  <li>Unread</li>
+                  <li>Starred</li>
+                  <li>Unstarred</li>
+                </ul>
+              </div>
+              <div class="main-top-left-displays main-top-left-three-dots-display">
+                <span>Mark all as read</span>
+                <hr>
+                <p>Select messages to see more acions</p>
+              </div>
             </div>
-            
-            <div class="main-top-left-checkbox-display">
-              <i id="trash-email" class="fa fa-trash" aria-hidden="true"></i>
-            </div>
+          </div>
+          <div class="main-top-middle">
+            <img src="./images/gmail-refresh-icon.gif" alt="refresh emails">
           </div>
           <div class="main-top-right">
             <p class="pagination">1-50 of 1,230</p>
@@ -175,7 +201,7 @@
           <div>email subject</div>
           <div>email body</div>
           <div>more icons</div>
-          <div>Send button and other icons</div>
+          <div><button>Send</button> button and other icons</div>
         </div>
       </div>
 
