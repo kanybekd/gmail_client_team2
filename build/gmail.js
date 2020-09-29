@@ -144,6 +144,11 @@ function displayData(fetch_output){
             }
         }
 
+        // THIS SECTION IS FOR SELECTING INDIVIDUAL INPUT ELEMENTS IN THE EMAIL LIST
+        // if(){
+            
+        // }
+
     })
     
     function createElements(dataSet){
