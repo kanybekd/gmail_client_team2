@@ -1,11 +1,13 @@
-let url = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=primary';
+let urlPrimary = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=primary';
+let urlSocial = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=social';
+let urlPromotions = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=promotions';
 let primaryEmails = {};
 let trashObject = {};
 let spamObject = {};
 let starredObject = {};
 
 
-fetch(url)
+fetch(urlPrimary)
 .then(response => response.json())
 .then((output) => {
     console.log(output)
@@ -33,15 +35,8 @@ function displayData(fetch_output){
                 element.firstChild.style.display = 'none';
                 element.lastChild.style.display = 'none';
             });
-            e.target.firstChild.style.display = 'block';
-            e.target.firstChild.style.position = 'absolute';
-            e.target.firstChild.style.left = '0';
-            e.target.lastChild.style.backgroundColor = '#F4F7F7';
-    
-            e.target.lastChild.style.display = 'block';
-            e.target.lastChild.style.position = 'absolute';
-            e.target.lastChild.style.right = '0';
-            e.target.lastChild.style.backgroundColor = '#F4F7F7';
+            e.target.firstChild.classList.add('first-child')
+            e.target.lastChild.classList.add('last-child')
         }
     })
     
@@ -145,9 +140,18 @@ function displayData(fetch_output){
         }
 
         // THIS SECTION IS FOR SELECTING INDIVIDUAL INPUT ELEMENTS IN THE EMAIL LIST
-        // if(){
-            
-        // }
+        if(document.getElementById(id).checked){
+            // console.log('you checked single input inside list el')
+            document.querySelector('#main-top-left').classList.remove('main-top-left-before');
+            document.querySelector('#main-top-left').classList.add('main-top-left-after');
+            document.querySelector('#main-top-left-refresh').style.display = 'none';
+            document.querySelector('.main-top-checkbox-checked-div').style.display = 'block'
+        } else {
+            document.querySelector('#main-top-left').classList.add('main-top-left-before');
+            document.querySelector('#main-top-left').classList.remove('main-top-left-after');
+            document.querySelector('#main-top-left-refresh').style.display = 'block';
+            document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
+        }
 
     })
     
@@ -203,7 +207,6 @@ function displayData(fetch_output){
                 additionalBtns.setAttribute('id', `${key}g`);
                 additionalBtns.setAttribute('class', 'common last-child');
                 additionalBtns.style.display = 'none';
-                // additionalBtns.innerText = "Hello Philadelphia";
                 additionalBtns.innerHTML = '<img src="./images/archive.png" alt="" /> <img src="./images/trash-icon.png" alt=""/><img src="./images/mark_as_unread.png" alt="" /><img src="./images/snooze-icon.png" alt=""/>';
                 mainUlLi.appendChild(additionalBtns);
         

@@ -448,10 +448,24 @@ main {
   position: relative;
 }
 
-#email-list-ul-el li:hover {
+#email-list-ul-el .main-ul-li-class:hover {
   border: 1px solid lightgray;
   box-shadow: 0 2px 2px lightgray;
   cursor: pointer;
+}
+
+#email-list-ul-el .main-ul-li-class .first-child {
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: #F4F7F7;
+}
+
+#email-list-ul-el .main-ul-li-class .last-child {
+  display: block;
+  position: absolute;
+  left: 0;
+  background-color: #F4F7F7;
 }
 
 .common {
