@@ -49,7 +49,7 @@
           <div class="trash left-tag">
             <img id="sidebar-trash-icon" src="./images/trash-icon.png" />
             <span>Trash</span>
-            <span id="trash-counter" style="color: red;"></span>
+            <span id="trash-counter" style="color: red;">0</span>
           </div>
           <div class="spam left-tag">
             <img id="sidebar-spam-icon" src="images/spam-icon.png" />
@@ -100,92 +100,131 @@
       </aside>
       
       <main>
-        <!-- KANYBEK'S PART STARTS HERE -->
-        <section class="main-top">
-          <div>
-            <div id="main-top-left" class="main-top-left-before">
-              <div class="main-top-left-checkbox-down">
-                <input type="checkbox" id="main-top-checkbox">
-                <i id="main-top-left-fa-arrow-down" class="fa fa-angle-down" aria-hidden="true"></i>
-              </div>
-              <i id="main-top-left-refresh" class="fa fa-redo" aria-hidden="true"></i>
-              <div class="main-top-checkbox-checked-div">
-                <div class="main-top-checkbox-checked-display">
-                  <img id="archive-email" src="./images/archive.png" alt="">
-                  <img id="spam-email" src="./images/spam-icon2.png" alt="">
-                  <img id="trash-email" src="./images/trash-icon.png" alt="">
-                  <img id="mark-as-read-email" src="./images/mark_as_unread.png" alt="">
-                  <img id="snooze-email" src="./images/snooze-icon.png" alt="">
-                  <img id="add-to-tasks-email" src="./images/add-to-tasks-icon.jpg" alt="">
-                  <img id="move-to-email" src="./images/move-to-icon.jpg" alt="">
-                  <img id="labels-email" src="./images/labels-icon.jpg" alt="">
+          <!-- KANYBEK'S PART STARTS HERE -->
+          <section class="main-top">
+            <div>
+              <div id="main-top-left" class="main-top-left-before">
+                <div class="main-top-left-checkbox-down">
+                  <input type="checkbox" id="main-top-checkbox">
+                  <i id="main-top-left-fa-arrow-down" class="fa fa-angle-down" aria-hidden="true"></i>
+                </div>
+                <div class="email-content-back-button">
+                  <i id="email-content-back-button" class="fa fa-arrow-left"></i>
+                </div>
+                <i id="main-top-left-refresh" class="fa fa-redo" aria-hidden="true"></i>
+                <div class="main-top-checkbox-checked-div">
+                  <div class="main-top-checkbox-checked-display">
+                    <img id="archive-email" src="./images/archive.png" alt="">
+                    <img id="spam-email" src="./images/spam-icon2.png" alt="">
+                    <img id="trash-email" src="./images/trash-icon.png" alt="">
+                    <img id="mark-as-read-email" src="./images/mark_as_unread.png" alt="">
+                    <img id="snooze-email" src="./images/snooze-icon.png" alt="">
+                    <img id="add-to-tasks-email" src="./images/add-to-tasks-icon.jpg" alt="">
+                    <img id="move-to-email" src="./images/move-to-icon.jpg" alt="">
+                    <img id="labels-email" src="./images/labels-icon.jpg" alt="">
+                  </div>
+                </div>
+                <i id="main-top-left-three-dots" class="fa fa-ellipsis-v" aria-hidden="true"></i>
+                <div class="main-top-left-displays main-top-left-checkbox-display">
+                  <ul>
+                    <li>All</li>
+                    <li>None</li>
+                    <li>Read</li>
+                    <li>Unread</li>
+                    <li>Starred</li>
+                    <li>Unstarred</li>
+                  </ul>
+                </div>
+                <div class="main-top-left-displays main-top-left-three-dots-display">
+                  <span>Mark all as read</span>
+                  <hr>
+                  <p>Select messages to see more acions</p>
                 </div>
               </div>
-              <i id="main-top-left-three-dots" class="fa fa-ellipsis-v" aria-hidden="true"></i>
-              <div class="main-top-left-displays main-top-left-checkbox-display">
-                <ul>
-                  <li>All</li>
-                  <li>None</li>
-                  <li>Read</li>
-                  <li>Unread</li>
-                  <li>Starred</li>
-                  <li>Unstarred</li>
-                </ul>
-              </div>
-              <div class="main-top-left-displays main-top-left-three-dots-display">
-                <span>Mark all as read</span>
-                <hr>
-                <p>Select messages to see more acions</p>
+            </div>
+            <div class="main-top-middle">
+              <img src="./images/gmail-refresh-icon.gif" alt="refresh emails">
+            </div>
+            <div class="main-top-right">
+              <p class="pagination">1-50 of 1,230</p>
+              <i class="fa fa-arrow-left" aria-hidden="true"></i>
+              <i class="fa fa-arrow-right" aria-hidden="true"></i>
+              <div>
+                <i class="fa fa-keyboard" aria-hidden="true"></i>
+                <i class="fa fa-angle-down" aria-hidden="true"></i>
               </div>
             </div>
-          </div>
-          <div class="main-top-middle">
-            <img src="./images/gmail-refresh-icon.gif" alt="refresh emails">
-          </div>
-          <div class="main-top-right">
-            <p class="pagination">1-50 of 1,230</p>
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-            <div>
-              <i class="fa fa-keyboard" aria-hidden="true"></i>
-              <i class="fa fa-angle-down" aria-hidden="true"></i>
-            </div>
-          </div>
-        </section>
-        <!-- KANYBEK'S PART ENDS HERE -->
+          </section>
+          <!-- KANYBEK'S PART ENDS HERE -->
 
-        <!-- ULANBEK'S PART STARTS HERE -->
-        <div class="email-body">
-          <section id="type-bar">
-              <ul id="nav-ul-el">
-                <li class="nav-list active-bot-red" id="primary"><i class="fas fa-inbox"></i>Primary</li>
-                <li class="nav-list" id="social"><i class="fas fa-user-friends"></i>Social</li>
-                <li class="nav-list" id="promotions"><i class="fas fa-tag"></i>Promotions</li>
+          <!-- ULANBEK'S PART STARTS HERE -->
+          <div class="email-body">
+            <section id="type-bar">
+                <ul id="nav-ul-el">
+                  <li class="nav-list active-bot-red" id="primary"><i class="fas fa-inbox"></i>Primary</li>
+                  <li class="nav-list" id="social"><i class="fas fa-user-friends"></i>Social</li>
+                  <li class="nav-list" id="promotions"><i class="fas fa-tag"></i>Promotions</li>
+                </ul>
+            </section>
+            <!-- ULANBEK'S PART ENDS HERE -->
+            
+            <!-- AZAMAT'S PART STARTS HERE -->
+            <section class="email-list">
+              <ul id='email-ul-list'>
+                <!-- <li class="ul-li-list" id='0'>
+                    <i id="child1" class="common first-last fa fa-ellipsis-v"></i>
+                    <input id="child2" class="common" type="checkbox">
+                    <i id="child3" class="common fa fa-star"></i>
+                    <div id="child4" class="common">Sender Email</div>
+                    <div id="child5" class="common">Email Message</div>
+                    <div id="child6" class="common">Time</div>
+                    <div id="child7" class="common first-last">
+                        <img src="./images/archive.png" alt="">
+                        <img src="./images/trash-icon.png" alt="">
+                        <img src="./images/mark_as_unread.png" alt="">
+                        <img src="./images/snooze-icon.png" alt="">
+                    </div>
+                </li> -->
               </ul>
-          </section>
-          <!-- ULANBEK'S PART ENDS HERE -->
+            </section>
+          </div>
+          <!-- AZAMAT'S PART ENDS HERE -->
           
-          <!-- AZAMAT'S PART STARTS HERE -->
-          <section class="email-list">
-            <ul id='email-ul-list'>
-              <!-- <li class="ul-li-list" id='0'>
-                  <i id="child1" class="common first-last fa fa-ellipsis-v"></i>
-                  <input id="child2" class="common" type="checkbox">
-                  <i id="child3" class="common fa fa-star"></i>
-                  <div id="child4" class="common">Sender Email</div>
-                  <div id="child5" class="common">Email Message</div>
-                  <div id="child6" class="common">Time</div>
-                  <div id="child7" class="common first-last">
-                      <img src="./images/archive.png" alt="">
-                      <img src="./images/trash-icon.png" alt="">
-                      <img src="./images/mark_as_unread.png" alt="">
-                      <img src="./images/snooze-icon.png" alt="">
-                  </div>
-              </li> -->
-            </ul>
-          </section>
-        </div>
-        <!-- AZAMAT'S PART ENDS HERE -->
+          <div class="email-content">
+
+            <div class="email-content-top">
+                <div class="email-content-title">GlassesUSA.com: New shipment for order # 102510306</div>
+                <div class="print-and-new-window">
+                    <i class="fa fa-print"></i>
+                    <i class="fa fa-arrow-circle-right"></i>
+                </div>          
+            </div>
+    
+            <div class="email-content-middle">
+              <div class="email-content-middle-sender-info">GlassesUSA Service 'service@glassesusa.com'</div>
+              <div class="time-and-add-icons">
+                  <div>Time</div>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-reply"></i>
+                  <i class="fa fa-ellipsis-v"></i>
+              </div>
+            </div>
+            
+            <div class="email-content-bottom">
+              <p>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum</p>
+            </div>
+    
+            <div class="reply-forward">
+                <div class="reply-forward-common">
+                    <i id="reply-forward-reply-icon" class="fa fa-reply"></i>
+                    <span>Reply</span>
+                </div>
+                <div class="reply-forward-common">
+                    <i id="reply-forward-forward-icon" class="fa fa-arrow-right"></i>
+                    <span>Forward</span>
+                </div>
+            </div>
+          </div>
       </main>
       <!-- RUSTAM'S PART STARTS HERE -->
       <aside class="aside-right">

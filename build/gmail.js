@@ -470,24 +470,32 @@ function displayData(){
             }
         }
     }
+    displayDataStarred();
 }
-    
+
+function displayDataStarred(){
+    for(let key in primaryEmails){
+        if(primaryEmails[key].tags.isStarred){
+            document.querySelectorAll('.ul-li-list #child3')[key].style.color = '#fe7e00';
+        }
+    }
+}
+
 displayData();
+displayDataStarred();
+// displayDataSpam();
 
 document.body.addEventListener('click', function(event){
     const id = event.target.getAttribute('id')
 
     // THIS SECTION
     if(id === 'primary'){
-        document.querySelectorAll('#email-ul-list li').forEach(item => {
-            item.remove();
-        })
-        displayData();
+        primaryAndInbox();
     }
 
     // THIS SECTION
-    if(id === 'main-top-trash-icon'){
-        document.querySelectorAll('#email-ul-list li input').forEach(item => {
+    if(id === 'trash-email'){
+        document.querySelectorAll('#email-ul-list .ul-li-list input').forEach(item => {
             if(item.checked){
                 item.parentElement.remove();
                 document.querySelector('#trash-counter').innerText++;
@@ -497,8 +505,13 @@ document.body.addEventListener('click', function(event){
     }
 
     // THIS SECTION
+    if(id === 'sidebar-inbox-icon'){
+        primaryAndInbox();
+    }
+
+    // THIS SECTION
     if(id === 'sidebar-trash-icon'){
-        document.querySelectorAll('#email-ul-list li').forEach(item => {
+        document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
             item.remove();
         })
         for(let key in primaryEmails){
@@ -533,24 +546,90 @@ document.body.addEventListener('click', function(event){
     // THIS SECTION IS FOR CHECKING ALL EMAILS AT ONCE IN THE CURRENT SCREEN
     if(id === 'main-top-checkbox'){
         if(document.querySelector('#main-top-checkbox').checked){
-            document.querySelectorAll('.ul-li-list input').forEach(item => {
-                item.checked = true;
-            })
-            document.querySelector('#main-top-left').classList.remove('main-top-left-before');
-            document.querySelector('#main-top-left').classList.add('main-top-left-after');
-            document.querySelector('#main-top-left-refresh').style.display = 'none';
-            document.querySelector('.main-top-checkbox-checked-div').style.display = 'block';
+            document.querySelectorAll('.ul-li-list input').forEach(item => item.checked = true)
+            displayMainTopLeft();
         } else {
-            document.querySelectorAll('.ul-li-list input').forEach(item => {
-                item.checked = false;
-            })
-            document.querySelector('#main-top-left').classList.add('main-top-left-before');
-            document.querySelector('#main-top-left').classList.remove('main-top-left-after');
-            document.querySelector('#main-top-left-refresh').style.display = 'block';
-            document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
+            document.querySelectorAll('.ul-li-list input').forEach(item => item.checked = false)
+            undisplayMainTopLeft();
         }
     }
+
+    // THIS SECTION ...
+    if(id === 'child2'){
+        if(clickingIEachCheckbox()){
+            displayMainTopLeft();
+        } else {
+            undisplayMainTopLeft();
+        }
+    }
+
+    // THIS SECTION ...
+    if(id === 'sidebar-starred-icon'){
+        document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
+            item.remove();
+        })
+        for(let key in primaryEmails){
+            if(primaryEmails[key].tags.isStarred){
+                createElements(key);
+            }
+        }
+    }
+
+    // THIS SECTION ...
+    if(clickingIEachLists(id)){
+        document.querySelector('.email-body').style.display = 'none';        
+        document.querySelector('.email-content').style.display = 'block';
+        document.querySelector('.email-content-back-button').style.display = 'block';
+        document.querySelector('.main-top-left-checkbox-down').style.display = 'none';
+        displayMainTopLeft();      
+    }
+
+    // THIS SECTION ...
+    if(id === 'email-content-back-button'){
+        document.querySelector('.email-content-back-button').style.display = 'none';
+        document.querySelector('.main-top-left-checkbox-down').style.display = 'block';
+        primaryAndInbox();
+        undisplayMainTopLeft()
+    }
 })
+
+function primaryAndInbox(){
+    document.querySelector('.email-content').style.display = 'none';
+    document.querySelector('.email-body').style.display = 'block';
+    document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
+        item.remove();
+    })
+    displayData();
+}
+
+function clickingIEachCheckbox(){
+    let arr = [...document.querySelectorAll('#child2')]
+    return arr.some(item => item.checked)
+}
+
+function clickingIEachLists(id){
+    let arr = [...document.querySelectorAll('.ul-li-list')]
+    arr.forEach((item, index) => {
+        arr[index] = Number(item.getAttribute('id'))
+    })
+    if(arr.includes(Number(id))){
+        return true
+    }
+}
+
+function displayMainTopLeft(){
+    document.querySelector('#main-top-left').classList.remove('main-top-left-before');
+    document.querySelector('#main-top-left').classList.add('main-top-left-after');
+    document.querySelector('#main-top-left-refresh').style.display = 'none';
+    document.querySelector('.main-top-checkbox-checked-div').style.display = 'block';
+}
+
+function undisplayMainTopLeft(){
+    document.querySelector('#main-top-left').classList.add('main-top-left-before');
+    document.querySelector('#main-top-left').classList.remove('main-top-left-after');
+    document.querySelector('#main-top-left-refresh').style.display = 'block';
+    document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
+}
 
 function createElements(data_key){
     // console.log(keyArray)
