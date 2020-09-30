@@ -507,6 +507,49 @@ document.body.addEventListener('click', function(event){
             }
         }
     }
+
+    // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
+    if(id === 'compose-plus-icon' || id === 'compose-text'){
+        document.querySelector('.email-compose-screen').style.display = 'block'
+    }
+    if(id === 'close-new-message-screen'){
+        document.querySelector('.email-compose-screen').style.display = 'none'
+    }
+
+    // THIS SECTION IS FOR DISPLAYING OPTIONS FOR MAIN-TOP-LEFT-ARROW-DOWN ICON
+    if(id === 'main-top-left-fa-arrow-down'){
+        document.querySelector('.main-top-left-checkbox-display').classList.toggle('main-top-left-checkbox-display-on-off')
+    }
+
+    // THIS SECTION IS ...
+    if(id === 'main-top-left-refresh'){
+        // document.querySelector('.main-top-middle').classList.toggle('main-top-middle-on-off')
+        document.querySelector('.main-top-middle').style.display = 'block'
+        setTimeout(function () {
+            document.querySelector('.main-top-middle').style.display = 'none';
+        }, 1500);
+    }
+
+    // THIS SECTION IS FOR CHECKING ALL EMAILS AT ONCE IN THE CURRENT SCREEN
+    if(id === 'main-top-checkbox'){
+        if(document.querySelector('#main-top-checkbox').checked){
+            document.querySelectorAll('.ul-li-list input').forEach(item => {
+                item.checked = true;
+            })
+            document.querySelector('#main-top-left').classList.remove('main-top-left-before');
+            document.querySelector('#main-top-left').classList.add('main-top-left-after');
+            document.querySelector('#main-top-left-refresh').style.display = 'none';
+            document.querySelector('.main-top-checkbox-checked-div').style.display = 'block';
+        } else {
+            document.querySelectorAll('.ul-li-list input').forEach(item => {
+                item.checked = false;
+            })
+            document.querySelector('#main-top-left').classList.add('main-top-left-before');
+            document.querySelector('#main-top-left').classList.remove('main-top-left-after');
+            document.querySelector('#main-top-left-refresh').style.display = 'block';
+            document.querySelector('.main-top-checkbox-checked-div').style.display = 'none';
+        }
+    }
 })
 
 function createElements(data_key){
