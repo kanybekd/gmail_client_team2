@@ -608,12 +608,15 @@ function clickingIEachCheckbox(){
 }
 
 function clickingIEachLists(id){
-    let arr = [...document.querySelectorAll('.ul-li-list')]
-    arr.forEach((item, index) => {
-        arr[index] = Number(item.getAttribute('id'))
-    })
-    if(arr.includes(Number(id))){
-        return true
+    // console.log('id entering into clickingEachLists', id)
+    if(id !== null){
+        let arr = [...document.querySelectorAll('.ul-li-list')]
+        arr.forEach((item, index) => {
+            arr[index] = Number(item.getAttribute('id'))
+        })
+        if(arr.includes(Number(id))){
+            return true
+        }
     }
 }
 
