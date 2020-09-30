@@ -331,9 +331,9 @@ main {
       display: block;
     }
 
-    .main-top-left-three-dots-display-on-off {
+    /* .main-top-left-three-dots-display-on-off {
       /* display: block; */
-    }
+    } */
 
     .main-top-checkbox-checked-div {
       display: none;
@@ -427,73 +427,85 @@ main {
   border-bottom: 3px solid rgb(216, 3, 3);
 }
 
-#email-list {
+.email-list {
   background-color: #F5F7F7;
 }
 
-#email-list-ul-el {
+.email-list #email-ul-list {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
 
-#email-list-ul-el .main-ul-li-class {
+.email-list #email-ul-list .ul-li-list {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  position: relative;
   align-items: center;
+  justify-content: space-between;
   padding: 10px 0;
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
-  position: relative;
 }
 
-#email-list-ul-el .main-ul-li-class:hover {
+#child1 {
+  left: 0;
+  margin-left: 5px;
+}
+
+#child2 {
+  margin-left: 15px;
+}
+
+.ul-li-list .first-last {
+  display: none;
+  position: absolute;
+}
+
+.email-list #email-ul-list .ul-li-list:hover {
   border: 1px solid lightgray;
   box-shadow: 0 2px 2px lightgray;
   cursor: pointer;
 }
 
-#email-list-ul-el .main-ul-li-class .first-child {
+.ul-li-list:hover #child1, .ul-li-list:hover #child7 {
   display: block;
-  position: absolute;
-  left: 0;
-  background-color: #F4F7F7;
-}
-
-#email-list-ul-el .main-ul-li-class .last-child {
-  display: block;
-  position: absolute;
-  left: 0;
-  background-color: #F4F7F7;
 }
 
 .common {
-  padding: 0;
-  margin: 0 5px;
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  /* border: 1px solid blue; */
+  margin-right: 10px;
 }
 
-  .common img {
-    width: 20px;
-    height: 20px;
-    margin-left: 10px;
-  }
-.senderETD {
-  flex-grow: 1;
-}
 
-.senderED {
+
+#child4 {
   width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.diceMouseOver {
-  position: absolute;
-  display: block;
-  left: 0;
+#child5 {
+  flex-grow: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#child6 {
+  margin-right: 5px;
+}
+
+#child7 {
+  right: 0;
+  margin-right: 5px;
+  background-color: white;
+}
+
+#child7 img {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
 }
 
 .aside-right {
