@@ -1,7 +1,7 @@
 const primaryEmails = {};
 var keyArray = [];
 
-const fetch_output = [
+const fetch_output_primary = [
     {
       tags: { isStarred: false, isTrash: false, isSpam: false },
       senderName: 'Seytech Co',
@@ -454,8 +454,8 @@ const fetch_output = [
     }
   ]
 
-for(let i=0; i<fetch_output.length;i++){
-    primaryEmails[i] = fetch_output[i]
+for(let i=0; i<fetch_output_primary.length;i++){
+    primaryEmails[i] = fetch_output_primary[i]
 }
 
 // console.log(primaryEmails)
