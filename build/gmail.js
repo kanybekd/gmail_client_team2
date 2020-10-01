@@ -65,13 +65,6 @@ document.body.addEventListener('click', function(event){
     if(id === 'primary'){
       displayData(primaryEmails);
       removeActiveBotRedFromEachCategory(primaryEmails);
-      // if(!event.target.className.includes('active-bot-red')){
-      //   document.querySelectorAll('.nav-list').forEach(item => {
-      //       item.classList.remove('active-bot-red');
-      //   })
-      //   event.target.classList.add('active-bot-red');
-      //   primaryAndInbox();
-      // }
     }
 
     // THIS SECTION IS FOR SOCIAL CATEGORY EMAILS
@@ -81,13 +74,6 @@ document.body.addEventListener('click', function(event){
       })
       displayData(socialEmails);
       removeActiveBotRedFromEachCategory(socialEmails)
-      // if(!event.target.className.includes('active-bot-red')){
-      //     document.querySelectorAll('.nav-list').forEach(item => {
-      //         item.classList.remove('active-bot-red');
-      //     })
-      //     event.target.classList.add('active-bot-red');
-      //     createElements(socialEmails);
-      // }
     }
 
     // THIS SECTION IS FOR PROMOTIONS CATEGORY EMAILS
@@ -97,13 +83,6 @@ document.body.addEventListener('click', function(event){
       })
       displayData(promotionsEmails);
       removeActiveBotRedFromEachCategory(promotionsEmails);
-      // if(!event.target.className.includes('active-bot-red')){
-      //     document.querySelectorAll('.nav-list').forEach(item => {
-      //         item.classList.remove('active-bot-red');
-      //     })
-      //     event.target.classList.add('active-bot-red')
-      //     createElements(promotionsEmails);
-      // }
     }
 
     // THIS SECTION IS FOR SELECING INDIVIDUAL EMAILS IN THE EMAIL-LIST AND TRASHING THEM
@@ -232,12 +211,8 @@ function removeActiveBotRedFromEachCategory(email_category_dataset){
   document.querySelectorAll('.nav-list').forEach(item => {
     item.classList.remove('active-bot-red');
   })
+  // console.log(event.target)
   event.target.classList.add('active-bot-red');
-  if(email_category_dataset === primaryEmails){
-    primaryAndInbox();
-  } else {
-    createElements(email_category_dataset)
-  }
 }
 function filterTrashedEmailsFromEachCategory(email_category_dataset){
   for(let key in email_category_dataset){
