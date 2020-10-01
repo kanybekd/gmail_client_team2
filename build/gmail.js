@@ -64,13 +64,14 @@ document.body.addEventListener('click', function(event){
     // THIS SECTION IS FOR PRIMARY CATEGORY EMAILS
     if(id === 'primary'){
       displayData(primaryEmails);
-      if(!event.target.className.includes('active-bot-red')){
-        document.querySelectorAll('.nav-list').forEach(item => {
-            item.classList.remove('active-bot-red');
-        })
-        event.target.classList.add('active-bot-red');
-        primaryAndInbox();
-      }
+      removeActiveBotRedFromEachCategory(primaryEmails);
+      // if(!event.target.className.includes('active-bot-red')){
+      //   document.querySelectorAll('.nav-list').forEach(item => {
+      //       item.classList.remove('active-bot-red');
+      //   })
+      //   event.target.classList.add('active-bot-red');
+      //   primaryAndInbox();
+      // }
     }
 
     // THIS SECTION IS FOR SOCIAL CATEGORY EMAILS
@@ -79,13 +80,14 @@ document.body.addEventListener('click', function(event){
         item.remove();
       })
       displayData(socialEmails);
-        if(!event.target.className.includes('active-bot-red')){
-            document.querySelectorAll('.nav-list').forEach(item => {
-                item.classList.remove('active-bot-red');
-            })
-            event.target.classList.add('active-bot-red');
-            createElements(socialEmails);
-        }
+      removeActiveBotRedFromEachCategory(socialEmails)
+      // if(!event.target.className.includes('active-bot-red')){
+      //     document.querySelectorAll('.nav-list').forEach(item => {
+      //         item.classList.remove('active-bot-red');
+      //     })
+      //     event.target.classList.add('active-bot-red');
+      //     createElements(socialEmails);
+      // }
     }
 
     // THIS SECTION IS FOR PROMOTIONS CATEGORY EMAILS
@@ -94,13 +96,14 @@ document.body.addEventListener('click', function(event){
         item.remove();
       })
       displayData(promotionsEmails);
-        if(!event.target.className.includes('active-bot-red')){
-            document.querySelectorAll('.nav-list').forEach(item => {
-                item.classList.remove('active-bot-red');
-            })
-            event.target.classList.add('active-bot-red')
-            createElements(promotionsEmails);
-        }
+      removeActiveBotRedFromEachCategory(promotionsEmails);
+      // if(!event.target.className.includes('active-bot-red')){
+      //     document.querySelectorAll('.nav-list').forEach(item => {
+      //         item.classList.remove('active-bot-red');
+      //     })
+      //     event.target.classList.add('active-bot-red')
+      //     createElements(promotionsEmails);
+      // }
     }
 
     // THIS SECTION IS FOR SELECING INDIVIDUAL EMAILS IN THE EMAIL-LIST AND TRASHING THEM
@@ -120,6 +123,10 @@ document.body.addEventListener('click', function(event){
       document.querySelector('.main-top-left-checkbox-down').style.display = 'block';
       undisplayMainTopLeft();
       primaryAndInbox();
+      document.querySelectorAll('.nav-list').forEach(item => {
+        item.classList.remove('active-bot-red');
+      })
+      document.querySelector('#primary').classList.add('active-bot-red');
     }
 
     // THIS SECTION IS FOR CLICKING LEFT SIDE-BAR TRASH ICON AND DISPLAYING ALL TRASHED EMAILS
@@ -221,6 +228,17 @@ document.body.addEventListener('click', function(event){
     }
 })
 
+function removeActiveBotRedFromEachCategory(email_category_dataset){
+  document.querySelectorAll('.nav-list').forEach(item => {
+    item.classList.remove('active-bot-red');
+  })
+  event.target.classList.add('active-bot-red');
+  if(email_category_dataset === primaryEmails){
+    primaryAndInbox();
+  } else {
+    createElements(email_category_dataset)
+  }
+}
 function filterTrashedEmailsFromEachCategory(email_category_dataset){
   for(let key in email_category_dataset){
     if(email_category_dataset[key].tags.isTrash){
