@@ -63,24 +63,21 @@ document.body.addEventListener('click', function(event){
 
     // THIS SECTION IS FOR PRIMARY CATEGORY EMAILS
     if(id === 'primary'){
+      removeAllEmailsFromEmailList();
       displayData(primaryEmails);
       removeActiveBotRedFromEachCategory(primaryEmails);
     }
 
     // THIS SECTION IS FOR SOCIAL CATEGORY EMAILS
     if(id === 'social'){
-      document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
-        item.remove();
-      })
+      removeAllEmailsFromEmailList();
       displayData(socialEmails);
       removeActiveBotRedFromEachCategory(socialEmails)
     }
 
     // THIS SECTION IS FOR PROMOTIONS CATEGORY EMAILS
     if(id === 'promotions'){
-      document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
-        item.remove();
-      })
+      removeAllEmailsFromEmailList();
       displayData(promotionsEmails);
       removeActiveBotRedFromEachCategory(promotionsEmails);
     }
@@ -110,12 +107,10 @@ document.body.addEventListener('click', function(event){
 
     // THIS SECTION IS FOR CLICKING LEFT SIDE-BAR TRASH ICON AND DISPLAYING ALL TRASHED EMAILS
     if(id === 'sidebar-trash-icon'){
-        document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
-            item.remove();
-        })
-        filterTrashedEmailsFromEachCategory(primaryEmails);
-        filterTrashedEmailsFromEachCategory(socialEmails);
-        filterTrashedEmailsFromEachCategory(promotionsEmails);
+      removeAllEmailsFromEmailList();
+      filterTrashedEmailsFromEachCategory(primaryEmails);
+      filterTrashedEmailsFromEachCategory(socialEmails);
+      filterTrashedEmailsFromEachCategory(promotionsEmails);
     }
 
     // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
@@ -162,12 +157,10 @@ document.body.addEventListener('click', function(event){
 
     // THIS SECTION IS FOR DISPLAYING ALL OF THE STARRED EMAILS IN ALL OF THE CATEGORIES
     if(id === 'sidebar-starred-icon'){
-        document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
-            item.remove();
-        })
-        filterStarredEmailsFromEachCategory(primaryEmails);
-        filterStarredEmailsFromEachCategory(socialEmails);
-        filterStarredEmailsFromEachCategory(promotionsEmails);
+      removeAllEmailsFromEmailList();
+      filterStarredEmailsFromEachCategory(primaryEmails);
+      filterStarredEmailsFromEachCategory(socialEmails);
+      filterStarredEmailsFromEachCategory(promotionsEmails);
     }
 
     // THIS SECTION IS FOR CLICKING EACH EMAIL IN THE EMAIL-LIST
@@ -197,23 +190,43 @@ document.body.addEventListener('click', function(event){
     // THIS SECTION IS FOR SEARCHING EMAILS
     if(id === 'search-icon'){
       if(document.querySelector('#search-input').value !== ""){
-        document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
-          item.remove();
-        })
-        searchEachCategoryAndPresentData(primaryEmails)
-        searchEachCategoryAndPresentData(socialEmails)
-        searchEachCategoryAndPresentData(promotionsEmails)
+        removeAllEmailsFromEmailList();
+        searchEachCategoryAndPresentData(primaryEmails);
+        searchEachCategoryAndPresentData(socialEmails);
+        searchEachCategoryAndPresentData(promotionsEmails);
+        if(!document.querySelectorAll('.ul-li-list').length){
+          document.querySelector('#unfound-error-message').innerText = `SORRY, WE COULDN\'T FIND ANYTHING RELATED TO "${document.querySelector('#search-input').value}"`
+          setTimeout(function(){
+            document.querySelector('#unfound-error-message').innerText = "";
+          }, 2000)
+        }
       }
     }
+
+    // THIS SECTION IS FOR LEFT PAGINATION
+    if(id === 'pagination-left-arrow'){
+      console.log('pagination-left-arrow')
+    }
+
+    // THIS SECTION IS FOR RIGHT PAGINATION
+    if(id === 'pagination-right-arrow'){
+      console.log('pagination-right-arrow')
+    }
 })
+
+function removeAllEmailsFromEmailList(){
+  document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
+    item.remove();
+  })
+}
 
 function removeActiveBotRedFromEachCategory(email_category_dataset){
   document.querySelectorAll('.nav-list').forEach(item => {
     item.classList.remove('active-bot-red');
   })
-  // console.log(event.target)
   event.target.classList.add('active-bot-red');
 }
+
 function filterTrashedEmailsFromEachCategory(email_category_dataset){
   for(let key in email_category_dataset){
     if(email_category_dataset[key].tags.isTrash){
@@ -232,10 +245,10 @@ function filterStarredEmailsFromEachCategory(email_category_dataset){
 
 function searchEachCategoryAndPresentData(email_category_dataset){
   for(let key in email_category_dataset){
-    let searchArray = []
+    let searchArray = [];
     for(let item in email_category_dataset[key]){
       if(typeof email_category_dataset[key][item] === 'string'){
-          searchArray.push(email_category_dataset[key][item].toLowerCase())
+          searchArray.push(email_category_dataset[key][item].toLowerCase());
       }
     }
     if(searchArray.some(item => item.includes((document.querySelector('#search-input').value).toLowerCase()))){
@@ -254,19 +267,19 @@ function primaryAndInbox(){
 }
 
 function clickingIEachCheckbox(){
-    let arr = [...document.querySelectorAll('#child2')]
-    return arr.some(item => item.checked)
+    let arr = [...document.querySelectorAll('#child2')];
+    return arr.some(item => item.checked);
 }
 
 function clickingIEachLists(id){
     if(id !== null){
         let arr = [...document.querySelectorAll('.ul-li-list')]
         arr.forEach((item, index) => {
-            arr[index] = Number(item.getAttribute('id'))
+            arr[index] = Number(item.getAttribute('id'));
         })
-        console.log(arr)
+        console.log(arr);
         if(arr.includes(Number(id))){
-            return true
+            return true;
         }
     }
 }

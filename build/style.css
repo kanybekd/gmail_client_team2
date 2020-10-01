@@ -52,23 +52,7 @@ header {
     flex: 3;
     position: relative;
   }
-  /* header .middle input {
-    background: url('../images/search-icon.png') no-repeat;
-    background-size: 18px;
-    background-position: left center;
-    background-position-x: 10px;
-    background-color: rgba(242, 245, 245, 0.8);
-    padding-top: 20px;
-    padding-bottom: 20px;
-    padding-left: 40px;
-    padding-right: 20px;
-    border-radius: 8px;
-    border: none;
-    outline: none;
-    min-width: 240px;
-    max-width: 600px;
-    width: 90%;
-  } */
+
   header .middle #search-input {
     min-width: 240px;
     max-width: 600px;
@@ -79,6 +63,7 @@ header {
     border-radius: 8px;
     border: none;
     outline: none;
+    /* border: 1px solid red; */
   }
 
   .middle #search-icon {
@@ -86,6 +71,15 @@ header {
     left: 5px;
     top: 18px;
     font-size: 20px;
+  }
+
+  .middle #unfound-error-message {
+    /* border: 1px solid red; */
+    position: absolute;
+    bottom: -5px;
+    color: red;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
   }
 
   header .middle #search-input:focus {

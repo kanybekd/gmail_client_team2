@@ -20,6 +20,7 @@
       <div class="middle">
         <input id="search-input" type="text" placeholder="Search mail" />
         <i id="search-icon" class="fa fa-search"></i>
+        <div id="unfound-error-message"></div>
       </div>
 
       <div class="right">
@@ -149,9 +150,9 @@
             <img src="./images/gmail-refresh-icon.gif" alt="refresh emails">
           </div>
           <div class="main-top-right">
-            <p class="pagination">1-50 of 1,230</p>
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <p class="pagination"><span id="num-of-start-email">1</span> - <span id="num-of-end-email">20</span> of <span id="num-of-total-emails">50</span></p>
+            <i id="pagination-left-arrow" class="fa fa-arrow-left" aria-hidden="true"></i>
+            <i id="pagination-right-arrow" class="fa fa-arrow-right" aria-hidden="true"></i>
             <div>
               <i class="fa fa-keyboard" aria-hidden="true"></i>
               <i class="fa fa-angle-down" aria-hidden="true"></i>
