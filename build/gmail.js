@@ -211,6 +211,12 @@ document.body.addEventListener('click', function(event){
             document.querySelector('#unfound-error-message').innerText = "";
           }, 2000)
         }
+      } else {
+        removeAllEmailsFromEmailList();
+        document.querySelector('#unfound-error-message').innerText = 'Enter valid text to search';
+        setTimeout(function(){
+          document.querySelector('#unfound-error-message').innerText = '';
+        }, 2000)
       }
     }
 
