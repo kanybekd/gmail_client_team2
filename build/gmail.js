@@ -98,7 +98,7 @@ document.body.addEventListener('click', function(event){
       document.querySelector('.email-content-back-button').style.display = 'none';
       document.querySelector('.main-top-left-checkbox-down').style.display = 'block';
       undisplayMainTopLeft();
-      primaryAndInbox();
+      displayEmailsBasedOnTheCategory(primaryEmails);
       document.querySelectorAll('.nav-list').forEach(item => {
         item.classList.remove('active-bot-red');
       })
@@ -128,7 +128,6 @@ document.body.addEventListener('click', function(event){
 
     // THIS SECTION IS FOR REFRESHING EMAIL-LIST SCREEN AND FETCH IF THERE IS ANY NEW EMAILS
     if(id === 'main-top-left-refresh'){
-        // document.querySelector('.main-top-middle').classList.toggle('main-top-middle-on-off')
         document.querySelector('.main-top-middle').style.display = 'block'
         setTimeout(function () {
             document.querySelector('.main-top-middle').style.display = 'none';
@@ -170,12 +169,16 @@ document.body.addEventListener('click', function(event){
         document.querySelector('.email-content-back-button').style.display = 'block';
         document.querySelector('.main-top-left-checkbox-down').style.display = 'none';
         displayMainTopLeft();
-        for(let key in primaryEmails){
-          if(key === id){
-            document.querySelector('.email-content-title').innerHTML = primaryEmails[key].messageTitle
-            document.querySelector('.email-content-middle-sender-info').innerHTML = primaryEmails[key].senderName + ' ' + primaryEmails[key].senderEmail
-            document.querySelector('.email-content-bottom').innerHTML = primaryEmails[key].messages[0].message
-          }
+        
+        let newArr = document.querySelectorAll('.nav-list').forEach(item => document.querySelector('.active-bot-red').getAttribute('id'))
+        if(xFun() === 'primary'){
+          clickingIEachListsAndDisplayingEmailContent(id, primaryEmails);
+        }
+        if(xFun() === 'social'){
+          clickingIEachListsAndDisplayingEmailContent(id, socialEmails);
+        }
+        if(xFun() === 'promotions'){
+          clickingIEachListsAndDisplayingEmailContent(id, promotionsEmails);
         }
     }
 
@@ -183,7 +186,15 @@ document.body.addEventListener('click', function(event){
     if(id === 'email-content-back-button'){
         document.querySelector('.email-content-back-button').style.display = 'none';
         document.querySelector('.main-top-left-checkbox-down').style.display = 'block';
-        primaryAndInbox();
+        if(xFun() === 'primary'){
+          displayEmailsBasedOnTheCategory(primaryEmails);
+        }
+        if(xFun() === 'social'){
+          displayEmailsBasedOnTheCategory(socialEmails);
+        }
+        if(xFun() === 'promotions'){
+          displayEmailsBasedOnTheCategory(promotionsEmails);
+        }
         undisplayMainTopLeft()
     }
 
@@ -213,6 +224,23 @@ document.body.addEventListener('click', function(event){
       console.log('pagination-right-arrow')
     }
 })
+
+
+function xFun(){
+  let newArr1 = [...document.querySelectorAll('.nav-list')];
+  let newArr2 = [];
+  newArr1.forEach(item => newArr2.push(item.getAttribute('class')))
+  let newArr3 = newArr2.filter(item => item.includes('active-bot-red'))
+  if(newArr2.indexOf(newArr3[0]) === 0){
+    return 'primary';
+  }
+  if(newArr2.indexOf(newArr3[0]) === 1){
+    return 'social';
+  }
+  if(newArr2.indexOf(newArr3[0]) === 2){
+    return 'promotions';
+  }
+}
 
 function removeAllEmailsFromEmailList(){
   document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
@@ -257,13 +285,13 @@ function searchEachCategoryAndPresentData(email_category_dataset){
   }
 }
 
-function primaryAndInbox(){
+function displayEmailsBasedOnTheCategory(email_category_dataset){
     document.querySelector('.email-content').style.display = 'none';
     document.querySelector('.email-body').style.display = 'block';
     document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
         item.remove();
     })
-    displayData(primaryEmails);
+    displayData(email_category_dataset);
 }
 
 function clickingIEachCheckbox(){
@@ -277,11 +305,20 @@ function clickingIEachLists(id){
         arr.forEach((item, index) => {
             arr[index] = Number(item.getAttribute('id'));
         })
-        console.log(arr);
         if(arr.includes(Number(id))){
             return true;
         }
     }
+}
+
+function clickingIEachListsAndDisplayingEmailContent(li_id, email_category_dataset){
+  for(let key in email_category_dataset){
+    if(key === li_id){
+      document.querySelector('.email-content-title').innerHTML = email_category_dataset[key].messageTitle
+      document.querySelector('.email-content-middle-sender-info').innerHTML = email_category_dataset[key].senderName + ' ' + email_category_dataset[key].senderEmail
+      document.querySelector('.email-content-bottom').innerHTML = email_category_dataset[key].messages[0].message
+    }
+  }
 }
 
 function displayMainTopLeft(){
