@@ -1,461 +1,1375 @@
 const primaryEmails = {};
+const socialEmails = {};
+const promotionsEmails = {};
 var keyArray = [];
 
 const fetch_output_primary = [
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Seytech Co',
-      senderEmail: 'support@seytech.com',
-      messageTitle: 'Enrollment start date',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object], [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Heroku',
-      senderEmail: 'heroku@heroku.com',
-      messageTitle: 'Excited to announce our new feature',      
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Facebook',
-      senderEmail: 'facebook@facebook.com',
-      messageTitle: 'Today is your friends birthday!',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: false },
-      senderName: 'Michael Dunn',
-      senderEmail: 'm@dunn.com',
-      messageTitle: "Don't forget about our meeting today...",
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'AICamp',
-      date: '2020-09-29T15:20:26.708Z',
-      senderEmail: 'admin@atiglobal.org',
-      messageTitle: 'New AI Course Scheduled: 4-Weeks Practical Python for Machine Learning.',
-      isRead: false,
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Uber',
-      senderEmail: 'support@uber.com',
-      messageTitle: 'This offer ends soon',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: true },
-      senderName: 'GoFundMe',
-      senderEmail: 'hello@marketing.gofundme.com',
-      messageTitle: 'Please, your help is needed',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: true, isTrash: false, isSpam: true },
-      senderName: 'Zuzanna Kozlecka',
-      senderEmail: 'zkozlecka@mail.edu',
-      messageTitle: 'Please, your help is needed',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    },
-    {
-      tags: { isStarred: false, isTrash: false, isSpam: false },
-      senderName: 'Chase',
-      senderEmail: 'no-reply@alertsp.chase.com',
-      messageTitle: 'Your credit card statement is ready',
-      isRead: false,
-      date: '2020-09-29T15:20:26.708Z',
-      messages: [ [Object] ]
-    }
-  ]
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Seytech Co',
+    senderEmail: 'support@seytech.com',
+    messageTitle: 'Enrollment start date',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object], [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Heroku',
+    senderEmail: 'heroku@heroku.com',
+    messageTitle: 'Excited to announce our new feature',      
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Facebook',
+    senderEmail: 'facebook@facebook.com',
+    messageTitle: 'Today is your friends birthday!',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'AICamp',
+    date: '2020-09-29T15:20:26.708Z',
+    senderEmail: 'admin@atiglobal.org',
+    messageTitle: 'New AI Course Scheduled: 4-Weeks Practical Python for Machine Learning.',
+    isRead: false,
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Uber',
+    senderEmail: 'support@uber.com',
+    messageTitle: 'This offer ends soon',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: true },
+    senderName: 'GoFundMe',
+    senderEmail: 'hello@marketing.gofundme.com',
+    messageTitle: 'Please, your help is needed',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: true },
+    senderName: 'Zuzanna Kozlecka',
+    senderEmail: 'zkozlecka@mail.edu',
+    messageTitle: 'Please, your help is needed',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-29T15:20:26.708Z',
+    messages: [ [Object] ]
+  }
+];
+const fetch_output_social = [
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Seytech Co',
+    senderEmail: 'support@seytech.com',
+    messageTitle: 'Enrollment start date',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object], [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Heroku',
+    senderEmail: 'heroku@heroku.com',
+    messageTitle: 'Excited to announce our new feature',      
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Facebook',
+    senderEmail: 'facebook@facebook.com',
+    messageTitle: 'Today is your friends birthday!',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'AICamp',
+    date: '2020-09-30T16:29:58.869Z',
+    senderEmail: 'admin@atiglobal.org',
+    messageTitle: 'New AI Course Scheduled: 4-Weeks Practical Python for Machine Learning.',
+    isRead: false,
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Uber',
+    senderEmail: 'support@uber.com',
+    messageTitle: 'This offer ends soon',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: true },
+    senderName: 'GoFundMe',
+    senderEmail: 'hello@marketing.gofundme.com',
+    messageTitle: 'Please, your help is needed',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: true },
+    senderName: 'Zuzanna Kozlecka',
+    senderEmail: 'zkozlecka@mail.edu',
+    messageTitle: 'Please, your help is needed',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.869Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.870Z',
+    messages: [ [Object] ]
+  }
+];
+const fetch_output_promotions = [
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Seytech Co',
+    senderEmail: 'support@seytech.com',
+    messageTitle: 'Enrollment start date',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object], [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Heroku',
+    senderEmail: 'heroku@heroku.com',
+    messageTitle: 'Excited to announce our new feature',      
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Facebook',
+    senderEmail: 'facebook@facebook.com',
+    messageTitle: 'Today is your friends birthday!',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: false },
+    senderName: 'Michael Dunn',
+    senderEmail: 'm@dunn.com',
+    messageTitle: "Don't forget about our meeting today...",
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'AICamp',
+    date: '2020-09-30T16:29:58.872Z',
+    senderEmail: 'admin@atiglobal.org',
+    messageTitle: 'New AI Course Scheduled: 4-Weeks Practical Python for Machine Learning.',
+    isRead: false,
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Uber',
+    senderEmail: 'support@uber.com',
+    messageTitle: 'This offer ends soon',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: true },
+    senderName: 'GoFundMe',
+    senderEmail: 'hello@marketing.gofundme.com',
+    messageTitle: 'Please, your help is needed',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: true, isTrash: false, isSpam: true },
+    senderName: 'Zuzanna Kozlecka',
+    senderEmail: 'zkozlecka@mail.edu',
+    messageTitle: 'Please, your help is needed',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.872Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  },
+  {
+    tags: { isStarred: false, isTrash: false, isSpam: false },
+    senderName: 'Chase',
+    senderEmail: 'no-reply@alertsp.chase.com',
+    messageTitle: 'Your credit card statement is ready',
+    isRead: false,
+    date: '2020-09-30T16:29:58.873Z',
+    messages: [ [Object] ]
+  }
+]
 
 for(let i=0; i<fetch_output_primary.length;i++){
     primaryEmails[i] = fetch_output_primary[i]
+}
+
+for(let i=0; i<fetch_output_primary.length;i++){
+    socialEmails[i] = fetch_output_social[i]
+}
+
+for(let i=0; i<fetch_output_primary.length;i++){
+    promotionsEmails[i] = fetch_output_promotions[i]
 }
 
 // console.log(primaryEmails)
@@ -488,12 +1402,40 @@ displayDataStarred();
 document.body.addEventListener('click', function(event){
     const id = event.target.getAttribute('id')
 
-    // THIS SECTION
+    // THIS SECTION IS FOR PRIMARY BUTTON
     if(id === 'primary'){
+      if(!event.target.className.includes('active-bot-red')){
+        document.querySelectorAll('.nav-list').forEach(item => {
+            item.classList.remove('active-bot-red');
+        })
+        event.target.classList.add('active-bot-red')
         primaryAndInbox();
+      }
     }
 
-    // THIS SECTION
+    // THIS SECTION IS FOR SOCIAL BUTTON
+    if(id === 'social'){
+        if(!event.target.className.includes('active-bot-red')){
+            document.querySelectorAll('.nav-list').forEach(item => {
+                item.classList.remove('active-bot-red');
+            })
+            event.target.classList.add('active-bot-red')
+            // createElements(socialEmails);
+        }
+    }
+
+    // THIS SECTION IS FOR PROMOTIONS BUTTON
+    if(id === 'promotions'){
+        if(!event.target.className.includes('active-bot-red')){
+            document.querySelectorAll('.nav-list').forEach(item => {
+                item.classList.remove('active-bot-red');
+            })
+            event.target.classList.add('active-bot-red')
+            // createElements(promotionsEmails);
+        }
+    }
+
+    // THIS SECTION IS FOR SELECING INDIVIDUAL EMAILS IN THE EMAIL-LIST AND TRASHING THEM
     if(id === 'trash-email'){
         document.querySelectorAll('#email-ul-list .ul-li-list input').forEach(item => {
             if(item.checked){
@@ -504,12 +1446,12 @@ document.body.addEventListener('click', function(event){
         })
     }
 
-    // THIS SECTION
+    // THIS SECTION IS FOR CLICKING LEFT SIDE-BAR INBOX ICON AND DISPLAYING ALL EMAILS
     if(id === 'sidebar-inbox-icon'){
         primaryAndInbox();
     }
 
-    // THIS SECTION
+    // THIS SECTION IS FOR CLICKING LEFT SIDE-BAR TRASH ICON AND DISPLAYING ALL TRASHED EMAILS
     if(id === 'sidebar-trash-icon'){
         document.querySelectorAll('#email-ul-list .ul-li-list').forEach(item => {
             item.remove();
@@ -534,7 +1476,7 @@ document.body.addEventListener('click', function(event){
         document.querySelector('.main-top-left-checkbox-display').classList.toggle('main-top-left-checkbox-display-on-off')
     }
 
-    // THIS SECTION IS ...
+    // THIS SECTION IS FOR REFRESHING EMAIL-LIST SCREEN AND FETCH IF THERE IS ANY NEW EMAILS
     if(id === 'main-top-left-refresh'){
         // document.querySelector('.main-top-middle').classList.toggle('main-top-middle-on-off')
         document.querySelector('.main-top-middle').style.display = 'block'
@@ -543,7 +1485,7 @@ document.body.addEventListener('click', function(event){
         }, 1500);
     }
 
-    // THIS SECTION IS FOR CHECKING ALL EMAILS AT ONCE IN THE CURRENT SCREEN
+    // THIS SECTION IS FOR CHECK MARKING ALL EMAILS AT ONCE IN THE CURRENT SCREEN
     if(id === 'main-top-checkbox'){
         if(document.querySelector('#main-top-checkbox').checked){
             document.querySelectorAll('.ul-li-list input').forEach(item => item.checked = true)
@@ -688,14 +1630,6 @@ function createElements(data_key){
 // let urlPrimary = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=primary';
 // let urlSocial = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=social';
 // let urlPromotions = 'https://polar-reaches-49806.herokuapp.com/api?page=1&category=promotions';
-// const primaryEmails = {};
-// const initialEmails = {};
-// const socialEmails = {};
-// const promotionsEmails = {};
-// const trashObject = {};
-// // const inboxObject = {};
-// const spamObject = {};
-// const starredObject = {};
 
 // fetch(urlPrimary)
 // .then(response => response.json())
