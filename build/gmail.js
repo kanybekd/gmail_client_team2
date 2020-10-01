@@ -114,7 +114,7 @@ document.body.addEventListener('click', function(event){
     }
 
     // THIS SECTION IS FOR DISPLAYING NEW EMAIL COMPOSING SCREEN
-    if(id === 'compose-plus-icon' || id === 'compose-text'){
+    if(id === 'compose-plus-icon' || id === 'compose-text' || id === 'compose-wrapper'){
         document.querySelector('.email-compose-screen').style.display = 'block'
     }
     if(id === 'close-new-message-screen'){
@@ -316,6 +316,7 @@ function clickingIEachListsAndDisplayingEmailContent(li_id, email_category_datas
     if(key === li_id){
       document.querySelector('.email-content-title').innerHTML = email_category_dataset[key].messageTitle
       document.querySelector('.email-content-middle-sender-info').innerHTML = email_category_dataset[key].senderName + ' ' + email_category_dataset[key].senderEmail
+      document.querySelector('.email-content-time').innerHTML = email_category_dataset[key].date.slice(11, 19) + ' PM';
       document.querySelector('.email-content-bottom').innerHTML = email_category_dataset[key].messages[0].message
     }
   }
@@ -366,8 +367,8 @@ function createElements(data_key, dataSet){
     email_list_child6.setAttribute('id', 'child6');
     email_list_child7.setAttribute('id', 'child7');
 
-    email_list_child4.innerText = dataSet[data_key].senderEmail;
-    email_list_child5.innerText = dataSet[data_key].messageTitle;
+    email_list_child4.innerText = dataSet[data_key].senderName;
+    email_list_child5.innerText = dataSet[data_key].messageTitle + ' - ' + dataSet[data_key].messages[0].message;
     email_list_child6.innerText = dataSet[data_key].date.slice(11, 19) + ' PM';
     email_list_child7.innerHTML = '<img src="./images/archive.png" alt="" /> <img src="./images/trash-icon.png" alt=""/><img src="./images/mark_as_unread.png" alt="" /><img src="./images/snooze-icon.png" alt=""/>';
 

@@ -11,6 +11,7 @@ body {
 }
 
 header {
+  /* border: 1px solid red; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -91,7 +92,8 @@ header {
 .flex-wrapper {
   display: flex;
   justify-content: space-between;
-  height: calc(100vh - 76px);
+  height: calc(100vh - 74px);
+  /* border: 1px solid red; */
 }
 
 /* LEFT SIDE-BAR */
@@ -282,6 +284,7 @@ header {
 
 main {
   flex-grow: 1;
+  flex-shrink: 1;
 }
 
 .main-top {
@@ -405,7 +408,7 @@ main {
 
 .email-body {
   overflow-y: scroll;
-  height: calc(100vh - 116px);
+  height: calc(100vh - 114px);
 }
 
 #type-bar {
@@ -496,21 +499,24 @@ main {
 }
 
 #child4 {
-  width: 180px;
+  min-width: 145px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 #child5 {
+  width: 440px;
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 #child6 {
   margin-right: 5px;
+  min-width: 80px;
 }
 
 #child7 {
@@ -561,19 +567,22 @@ main {
 
 .email-content-middle-sender-info {
   font-weight: bold;
+  font-size: 24px;
 }
 
 .time-and-add-icons {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 120px;
+  width: 200px;
 }
 
 .email-content-bottom {
   border: 1px solid rgb(212, 209, 209);
   margin-bottom: 20px;
   border-radius: 3px;
+  min-height: 200px;
+  padding: 15px;
 }
 
 .email-content-bottom p {
