@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="build/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/20da84b6f7.js" crossorigin="anonymous"></script>
     <title>GMAIL CLONE</title>
   </head>
@@ -24,11 +25,48 @@
       </div>
 
       <div class="right">
-        <img class="header-icon" src="images/question-icon.png" />
+        <img id ='question' class="header-icon" src="images/question-icon.png" />
         <img class="header-icon" src="images/settings-icon.png" />
-        <img class="header-icon" src="images/apps-icon.png" />
+        <img id ='app_menu'  class="header-icon" src="images/apps-icon.png" />
         <img class="header-icon lg" src="images/user-icon.png" />
       </div>
+      <div class="grid-container">
+
+      <div class="grid-item" id='youtube'><img id='youid' class ='im' src="images/youtube-icon.png" alt=""><span id='span'>Youtube</span></div>
+      <div class="grid-item" id='search'><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+      <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+      <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+      <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+      <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+      <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+      <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+      <div class="grid-item"><img class ='im' src="images/youtube-icon.png" alt=""><span>Youtube</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+      <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+      <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+      <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+      <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+      <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+      <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+      <div class="grid-item"><img class ='im' src="images/youtube-icon.png" alt=""><span>Youtube</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-icon.png" alt=""><span>Seacrh</span></div>
+      <div class="grid-item"><img class ='im' src="images/play-icon.png" alt=""><span>Play</span></div>
+      <div class="grid-item"><img class ='im' src="images/drive-logo.png" alt=""><span>G-Drive</span></div>
+      <div class="grid-item"><img class ='im' src="images/gmail-icon.png" alt=""><span>Gmail</span></div>
+      <div class="grid-item"><img class ='im' src="images/translate-logo.png" alt=""><span>Translate</span></div>
+      <div class="grid-item"><img class ='im' src="images/maps-icon.png" alt=""><span>Map</span></div>
+      <div class="grid-item"><img class ='im' src="images/contacts-icon.png" alt=""><span>Contacts</span></div>
+      <div class="grid-item"><img class ='im' src="images/google-calendar.png" alt=""><span>Calendar</span></div>
+      </div>
+      <div class="help_wrapper">
+          <div class="items_help">Help</div>
+          <div class="items_help">Training</div>
+          <div class="items_help">Updates</div>
+          <div class="items_help" id='bottom-list'>Send Feedback</div>
+        </div>
+
     </header>
     <!-- KANYBEK'S PART ENDS HERE -->
 
@@ -82,7 +120,7 @@
             <span onclick="window.open('https://meet.google.com/jsn-iiej-cxf?authuser=0&hl=en', '_blank');">Join a meeting</span>
           </div>
         </div>
-      
+
         <div class="hangouts">
           <p>Hangouts</p>
           <div class="hangout-user">
@@ -157,7 +195,7 @@
               <i class="fa fa-keyboard" aria-hidden="true"></i>
               <i class="fa fa-angle-down" aria-hidden="true"></i>
               <div class="keyboard-options">
-                
+
               </div>
             </div>
           </div>
@@ -174,7 +212,7 @@
               </ul>
           </section>
           <!-- ULANBEK'S PART ENDS HERE -->
-          
+
           <!-- AZAMAT'S PART STARTS HERE -->
           <section class="email-list">
             <ul id='email-ul-list'>
@@ -196,7 +234,7 @@
           </section>
         </div>
         <!-- AZAMAT'S PART ENDS HERE -->
-        
+
         <div class="email-content">
 
           <div class="email-content-top">
@@ -204,9 +242,9 @@
               <div class="print-and-new-window">
                   <i class="fa fa-print"></i>
                   <i class="fa fa-arrow-circle-right"></i>
-              </div>          
+              </div>
           </div>
-  
+
           <div class="email-content-middle">
             <div class="email-content-middle-sender-info"></div>
             <div class="time-and-add-icons">
@@ -216,9 +254,9 @@
                 <i class="fa fa-ellipsis-v"></i>
             </div>
           </div>
-          
+
           <div class="email-content-bottom"></div>
-  
+
           <div class="reply-forward">
               <div class="reply-forward-common">
                   <i id="reply-forward-reply-icon" class="fa fa-reply"></i>
@@ -260,5 +298,5 @@
       </div>
     </div>
   </body>
-  <script type="text/javascript" src="../build/gmail.js"></script>
+  <script type="text/javascript" src="./build/gmail.js"></script>
 </html>

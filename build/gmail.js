@@ -164,12 +164,12 @@ document.body.addEventListener('click', function(event){
 
     // THIS SECTION IS FOR CLICKING EACH EMAIL IN THE EMAIL-LIST
     if(clickingIEachLists(id)){
-        document.querySelector('.email-body').style.display = 'none';        
+        document.querySelector('.email-body').style.display = 'none';
         document.querySelector('.email-content').style.display = 'block';
         document.querySelector('.email-content-back-button').style.display = 'block';
         document.querySelector('.main-top-left-checkbox-down').style.display = 'none';
         displayMainTopLeft();
-        
+
         let newArr = document.querySelectorAll('.nav-list').forEach(item => document.querySelector('.active-bot-red').getAttribute('id'))
         if(xFun() === 'primary'){
           clickingIEachListsAndDisplayingEmailContent(id, primaryEmails);
@@ -287,7 +287,7 @@ function searchEachCategoryAndPresentData(email_category_dataset){
     }
     if(searchArray.some(item => item.includes((document.querySelector('#search-input').value).toLowerCase()))){
       createElements(key, email_category_dataset);
-    } 
+    }
   }
 }
 
@@ -378,13 +378,40 @@ function createElements(data_key, dataSet){
     email_list_child6.innerText = dataSet[data_key].date.slice(11, 19) + ' PM';
     email_list_child7.innerHTML = '<img src="./images/archive.png" alt="" /> <img src="./images/trash-icon.png" alt=""/><img src="./images/mark_as_unread.png" alt="" /><img src="./images/snooze-icon.png" alt=""/>';
 
-    email_ul_li_list.appendChild(email_list_child1);    
-    email_ul_li_list.appendChild(email_list_child2);    
-    email_ul_li_list.appendChild(email_list_child3);    
-    email_ul_li_list.appendChild(email_list_child4);    
-    email_ul_li_list.appendChild(email_list_child5);    
-    email_ul_li_list.appendChild(email_list_child6);    
+    email_ul_li_list.appendChild(email_list_child1);
+    email_ul_li_list.appendChild(email_list_child2);
+    email_ul_li_list.appendChild(email_list_child3);
+    email_ul_li_list.appendChild(email_list_child4);
+    email_ul_li_list.appendChild(email_list_child5);
+    email_ul_li_list.appendChild(email_list_child6);
     email_ul_li_list.appendChild(email_list_child7);
 
     email_ul_list.appendChild(email_ul_li_list)
 }
+// RIGHT header help and apps section
+var grd=document.querySelector('.grid-container');
+
+document.addEventListener('click',function(e){
+        if(e.target.getAttribute('id')==='app_menu'){
+          document.querySelector('.help_wrapper').style.display='none';
+          grd.style.display='grid';
+          }
+        else if(e.target.getAttribute('id')==='search'){
+          window.open("https://www.google.com", "_blank", );
+        }
+        else if(e.target.getAttribute('id')==='search'){
+          window.open("https://www.google.com", "_blank", );
+        }
+        else if(e.target.getAttribute('id')==='youtube' ||e.target.getAttribute('id')==='youid' ||e.target.getAttribute('id')==='span'){
+          window.open("https://www.youtube.com", "_blank", );
+        }
+        else if(e.target.getAttribute('id')==='question'){
+          grd.style.display='none';
+          document.querySelector('.help_wrapper').style.display='block';
+        }
+        else{
+          grd.style.display='none';
+          document.querySelector('.help_wrapper').style.display='none';
+        }
+        }
+      )

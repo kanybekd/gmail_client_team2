@@ -3,11 +3,11 @@
 
 body {
   padding: 0;
-  margin: 0; 
+  margin: 0;
 }
 
 * {
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 header {
@@ -95,7 +95,79 @@ header {
   height: calc(100vh - 74px);
   /* border: 1px solid red; */
 }
-
+.grid-container {
+    background: white;
+    position:absolute;
+    right:10px;
+    top:60px;
+    width:24%;
+    height:400px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+    border-radius:5px;
+    border:1px solid grey;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    box-shadow: 2px 2px 20px 2px lightgrey;
+    border:none;
+    display:none;
+    font-family: 'Roboto', sans-serif;
+    z-index: 1;
+  }
+  .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      font-size: 30px;
+      text-align: center;
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      height:90px;
+    }
+    .im{
+      width:30px;
+      height:30px;
+    }
+    .grid-container  .grid-item span{
+      font-size:14px;
+      font-family: 'Roboto', sans-serif;
+    }
+      .grid-item:hover{
+      background-color:#EEEFF2;
+      border-radius:10px;
+      cursor:pointer;
+    }
+    #question:hover,#app_menu:hover{
+    cursor:pointer;
+    box-shadow: 0 0 0 5px rgba(#000,.4) , 0 0 0 10px  #f05f75;
+  }
+  .help_wrapper{
+      background: white;
+      display:none;
+      flex-direction:column;
+      min-height:180px;
+      outline:none;
+      background-color:white;
+      border-radius:5px;
+      width:150px;
+      box-shadow:2px 2px 20px 2px lightgrey;
+      position:absolute;
+      right:120px;
+      top:55px;
+      font-family: 'Roboto', sans-serif;
+      z-index: 1;
+        }
+        .items_help{
+          padding:12px 12px 10px;
+        }
+        .items_help:hover{
+          background:#F7FAFA;
+          cursor:pointer;
+        }
+        #bottom-list{
+          border-top:1px solid lightgrey;
+        }
 /* LEFT SIDE-BAR */
 .sidebar {
   width: 260px;
@@ -126,7 +198,7 @@ header {
     }
     .sidebar .compose img {
       width: 30px;
-      height: 30px; 
+      height: 30px;
     }
 
   .sidebar .menu {
@@ -146,7 +218,7 @@ header {
       margin-right: 10px;
       position: relative;
     }
-    
+
       .sidebar .menu .left-tag img {
         height: 20px;
         width: 20px;
@@ -344,11 +416,11 @@ main {
     .email-content-back-button {
       display: none;
     }
-   
+
     #main-top-left-refresh {
       display: block;
     }
-    
+
     .main-top-left-checkbox-display-on-off {
       display: block;
     }
@@ -393,7 +465,7 @@ main {
       border-radius: 30px;
       border: 1px solid rgb(238, 236, 236);
     }
-  
+
   .main-top-right {
     display: flex;
     justify-content: space-between;
