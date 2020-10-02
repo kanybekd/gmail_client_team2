@@ -36,15 +36,15 @@ fetch(urlPromotions)
 
 function displayData(email_category_dataset){
   keyArray = [];
-    for(let key in email_category_dataset){
-        if(!email_category_dataset[key].tags.isTrash){
-            if(!keyArray.includes(Number(key))){
-              keyArray.push(Number(key));
-              createElements(key, email_category_dataset);
-            }
-        }
-    }
-    displayDataStarred(email_category_dataset);
+  for(let key in email_category_dataset){
+      if(!email_category_dataset[key].tags.isTrash){
+          if(!keyArray.includes(Number(key))){
+            keyArray.push(Number(key));
+            createElements(key, email_category_dataset);
+          }
+      }
+  }
+  displayDataStarred(email_category_dataset);
 }
 
 function displayDataStarred(email_category_dataset_starred){
